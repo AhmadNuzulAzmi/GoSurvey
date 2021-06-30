@@ -48,7 +48,16 @@
                                     if ($value->pembayaran == "Saldo") { ?>
                                         <td style="color: red;"> ------ </td>
                                     <?php } else { ?>
-                                        <td> <img src="<?= base_url('assets/gambar/pembayaran/') . $value->bukti ?>" /></td>
+                                        <td onclick="Swal.fire({
+                                                    title: '',
+                                                    text: '',
+                                                    imageUrl: '<?= base_url('assets/gambar/pembayaran/') . $value->bukti ?>',
+                                                    imageWidth: 400,
+                                                    imageHeight: 200,
+                                                    imageAlt: 'Custom image',
+                                                    })">
+                                            <img src="<?= base_url('assets/gambar/pembayaran/') . $value->bukti ?>" />
+                                        </td>
                                     <?php } ?>
 
                                     <?php

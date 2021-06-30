@@ -49,7 +49,7 @@
 
                   <td>
                     <a href="#<?= base_url('MemberMin_ctrl/edit' . $value->id_usr);  ?>" data-target="#exampleModal" class="edit" data-toggle="modal" data-id="<?php echo $value->id_usr; ?> " data-nama="<?php echo $value->nama_usr; ?> " data-email="<?php echo $value->email_usr; ?> " data-status="<?php echo $value->role_id; ?>"><label class=" badge badge-info">Edit</label></a>
-                    <a href="<?= base_url('Admin/MemberMin_ctrl/hapus/' . $value->id_usr); ?>" onclick="Swal.fire('Data Pengguna', 'Berhasi di hapus', 'success')"><label class="badge badge-danger">Hapus</label></a>
+                    <a href="<?= base_url('Admin/MemberMin_ctrl/hapus/' . $value->id_usr); ?>" onclick="return confirm('Apakah Anda Yakin ?');"><label class="badge badge-danger">Hapus</label></a>
                   </td>
 
                 </tr>

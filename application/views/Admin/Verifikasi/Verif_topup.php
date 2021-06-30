@@ -48,7 +48,14 @@
                                     <td><?php echo $value->nama_usr ?></td>
                                     <td><?php echo date('d F Y', $value->tgl_topup) ?></td>
                                     <td>Rp. <?php echo number_format($value->jml_topup, 2, ',', '.'); ?></td>
-                                    <td>
+                                    <td onclick="Swal.fire({
+                                                    title: '',
+                                                    text: 'Bukti Transfer',
+                                                    imageUrl: '<?= base_url('assets/gambar/dompet/') . $value->bukti ?>',
+                                                    imageWidth: 400,
+                                                    imageHeight: 200,
+                                                    imageAlt: 'Custom image',
+                                                    })">
                                         <img src="<?= base_url('assets/gambar/dompet/') . $value->bukti ?>" />
                                     </td>
                                     <td><?php echo $value->transaksi ?></td>

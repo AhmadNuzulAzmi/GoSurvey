@@ -50,7 +50,7 @@
                                     <?php } else { ?>
                                         <td onclick="Swal.fire({
                                                     title: '',
-                                                    text: '',
+                                                    text: 'Bukti Transfer',
                                                     imageUrl: '<?= base_url('assets/gambar/pembayaran/') . $value->bukti ?>',
                                                     imageWidth: 400,
                                                     imageHeight: 200,

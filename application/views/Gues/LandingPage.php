@@ -116,8 +116,8 @@
 
   </section><!-- End Hero -->
 
-
   <main id="main">
+
     <!-- ======= About Section ======= -->
     <section id="about" class="about" style="
     padding-bottom: 5px;">
@@ -125,8 +125,8 @@
         <div class="row gx-0">
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div class="content">
-              <h3 class="lower">SIAPA KITA (?)</h3>
-              <h5 class="tekswarna">Survei adalah pemeriksaan atau penelitian secara komprehensif. Survei yang dilakukan dalam melakukan penelitian itu biasa dilakukan dengan menyebarkan kuesioner atau wawancara, dengan tujuan untuk mengetahui: siapa mereka, apa yang mereka pikir, rasakan, atau kecenderungan suatu tindakan.</h5>
+              <h2 class="lower">Siapa Kita (?)</h2>
+              <p class="tekswarna">Survei adalah pemeriksaan atau penelitian secara komprehensif. Survei yang dilakukan dalam melakukan penelitian itu biasa dilakukan dengan menyebarkan kuesioner atau wawancara, dengan tujuan untuk mengetahui: siapa mereka, apa yang mereka pikir, rasakan, atau kecenderungan suatu tindakan.</p>
               <p class="p">GoSurvey merupakan platform yang membantu anda untuk mendapatkan respon dari pengguna (user). Kamu juga dapat menambah tahap dengan bergabung sebagai responden dan tahapan dari survey apa yang kamu isi.</p>
             </div>
           </div>
@@ -136,6 +136,7 @@
         </div>
       </div>
     </section><!-- End About Section -->
+
     <!-- ======= Values Section ======= -->
     <section id="values" class="values" style="
     padding-bottom: 5px;">
@@ -470,9 +471,9 @@
                   Saya dari perusahaan google, setelah menggunakan GoSurvey saya lebih mudah mendapatkan data dan mengelola data tersebut untuk mendapatkan strategi pemasaran dari hasil survey yang akurat.
                 </p>
                 <div class="profile mt-auto">
-                  <img src="<?php echo base_url(); ?>assets/user/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
+                  <img src="<?php echo base_url(); ?>assets/user/assets/img/testimonials/andra.jpg" class="testimonial-img" alt="">
+                  <h3>Andra H Al-Hafiz Hsb</h3>
+                  <h4>Mahasiswa</h4>
                 </div>
               </div>
             </div><!-- End testimonial item -->
@@ -486,8 +487,24 @@
                   Saya sebagai mahasiswa tingkat akhir, sangat beruntung menggunakan GoSurvey karena dapat mempermudah penelitian dan analisis data untuk menyusun skripsi.
                 </p>
                 <div class="profile mt-auto">
-                  <img src="<?php echo base_url(); ?>assets/user/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
+                  <img src="<?php echo base_url(); ?>assets/user/assets/img/testimonials/ilmi.jpg" class="testimonial-img" alt="">
+                  <h3>Atikah Ilmi Mardatillah</h3>
+                  <h4>Mahasiswi</h4>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  Saya sebagai mahasiswa menuju tingkat akhir, sangat beruntung dapat menggunakan website ini sebagai media untuk mendapatkan data dalam penelitian saya.                
+                </p>
+                <div class="profile mt-auto">
+                  <img src="<?php echo base_url(); ?>assets/user/assets/img/testimonials/fikri.jpg" class="testimonial-img" alt="">
+                  <h3>M. Fikri Ramadhan</h3>
                   <h4>Mahasiswa</h4>
                 </div>
               </div>
@@ -499,12 +516,12 @@
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                  Saya sebagai pemilik Starbucks, sangat terbantu dengan adanya GoSurvey karena saya dapat mengetahui pendapat customer terhadap usaha saya.
+                Saya sebagai mahasiswa, sangat beruntung dengan adanya website ini yang sangat berguna untuk saya yang sedang sibuk penelitian .
                 </p>
                 <div class="profile mt-auto">
-                  <img src="<?php echo base_url(); ?>assets/user/assets/img/testimonials/Starbucks.jpg" class="testimonial-img" alt="">
-                  <h3>Howard Schultz</h3>
-                  <h4>Pemilik Starbucks</h4>
+                  <img src="<?php echo base_url(); ?>assets/user/assets/img/testimonials/farah.jpg" class="testimonial-img" alt="">
+                  <h3>Farahdilla Annisa Putri</h3>
+                  <h4>Mahasiswi</h4>
                 </div>
               </div>
             </div><!-- End testimonial item -->
@@ -515,28 +532,12 @@
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                  Saya sebagai Direktur Gucci, lebih mudah mendapatkan penilaian-penilaian dari pelanggan saya setelah menggunakan GoSurvey.
-                </p>
+                Saya sebagai mahasiswa Tingkat Akhir, merasa sangat terbantu dengan adanya GoSurvey untuk membuat kuisioner sebagai data untuk penelitian saya sebagai syarat untuk lulus.
+              </p>
                 <div class="profile mt-auto">
-                  <img src="<?php echo base_url(); ?>assets/user/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                  <h3>Matt Brandon</h3>
-                  <h4>Direktur Gucci</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Saya sebagai Manager Reebok, setelah menggunakan GoSurvey saya lebih mudah mendapatkan penilaian yang di berikan oleh pelanggan-pelanggan saya.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="<?php echo base_url(); ?>assets/user/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                  <h3>John Larson</h3>
-                  <h4>Manager Reebok</h4>
+                  <img src="<?php echo base_url(); ?>assets/user/assets/img/testimonials/ghea.jpg" class="testimonial-img" alt="">
+                  <h3>Ghea Sundari Firnandi</h3>
+                  <h4>Mahasiswi</h4>
                 </div>
               </div>
             </div><!-- End testimonial item -->
@@ -565,7 +566,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
               <div class="member-img">
-                <img src="<?php echo base_url(); ?>assets/user/assets/img/team/azmi.jpeg" class="img-fluid" alt="">
+                <img src="<?php echo base_url(); ?>assets/user/assets/img/team/azmi.jpg" class="img-fluid" alt="">
               </div>
               <div class="member-info">
                 <h4>Ahmad Nuzul Azmi</h4>
@@ -589,7 +590,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
               <div class="member-img">
-                <img src="<?php echo base_url(); ?>assets/user/assets/img/team/gina.jpeg" class="img-fluid" alt="">
+                <img src="<?php echo base_url(); ?>assets/user/assets/img/team/gina.jpg" class="img-fluid" alt="">
               </div>
               <div class="member-info">
                 <h4>Gina Apriasiska</h4>
@@ -601,7 +602,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
             <div class="member">
               <div class="member-img">
-                <img src="<?php echo base_url(); ?>assets/user/assets/img/team/fauzan.jpeg" class="img-fluid" alt="">
+                <img src="<?php echo base_url(); ?>assets/user/assets/img/team/fauzan.jpg" class="img-fluid" alt="">
               </div>
               <div class="member-info">
                 <h4>M. Fauzan Delfani</h4>
@@ -616,36 +617,6 @@
 
     </section><!-- End Team Section -->
 
-    <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients" style="
-    padding-top: 10px;">
-
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h2>Klien Kami</h2>
-          <p>Klien yang telah menggunakan GoSurvey</p>
-        </header>
-
-        <div class="clients-slider swiper-container">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="<?php echo base_url(); ?>assets/user/assets/img/clients/chanel.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="<?php echo base_url(); ?>assets/user/assets/img/clients/gucci.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="<?php echo base_url(); ?>assets/user/assets/img/clients/hermes.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="<?php echo base_url(); ?>assets/user/assets/img/clients/jordan.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="<?php echo base_url(); ?>assets/user/assets/img/clients/lv.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="<?php echo base_url(); ?>assets/user/assets/img/clients/prada.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="<?php echo base_url(); ?>assets/user/assets/img/clients/reebok.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="<?php echo base_url(); ?>assets/user/assets/img/clients/zara.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="<?php echo base_url(); ?>assets/user/assets/img/clients/dior.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="<?php echo base_url(); ?>assets/user/assets/img/clients/burberry.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="<?php echo base_url(); ?>assets/user/assets/img/clients/adidas.png" class="img-fluid" alt=""></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-
-    </section><!-- End Clients Section -->
 
     <!-- ======= Recent Blog Posts Section ======= -->
     <!-- <section id="recent-blog-posts" class="recent-blog-posts"> -->
@@ -705,41 +676,44 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-6">
-            <div class="row gy-6">
-              <div class="col-md-6">
+          <div class="col-lg-20">
+            <div class="row gy-2">
+              <div class="col-md-2">
+              </div>
+              <div class="col-md-2">
                 <div class="info-box">
                   <i class="bi bi-geo-alt"></i>
                   <h3>Alamat</h3>
                   <p>Bojongsoang, <br>Bandung, BDO 40287</p>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-2">
                 <div class="info-box">
                   <i class="bi bi-telephone"></i>
                   <h3>Hubungi Kami</h3>
                   <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-2">
                 <div class="info-box">
                   <i class="bi bi-envelope"></i>
                   <h3>Email Kami</h3>
                   <p>gosurvey@gmail.com<br>infogosurvey@gmail.com</p>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-2">
                 <div class="info-box">
                   <i class="bi bi-clock"></i>
                   <h3>Buka Pukul</h3>
                   <p>Senin-Jumat<br>09.00 - 17.00 WIB</p>
                 </div>
               </div>
+              
             </div>
 
           </div>
 
-          <div class="col-lg-6">
+          <!-- <div class="col-lg-6">
             <form action="forms/contact.php" method="post" class="php-email-form">
               <div class="row gy-4">
 
@@ -770,7 +744,7 @@
               </div>
             </form>
 
-          </div>
+          </div> -->
 
         </div>
 

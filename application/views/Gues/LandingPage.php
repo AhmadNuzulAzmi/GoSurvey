@@ -577,7 +577,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
               <div class="member-img">
-                <img src="<?php echo base_url(); ?>assets/user/assets/img/team/azhar.jpeg" class="img-fluid" alt="">
+                <img src="<?php echo base_url(); ?>assets/user/assets/img/team/azhar.jpg" class="img-fluid" alt="">
               </div>
               <div class="member-info">
                 <h4>Azhar Maulana</h4>

@@ -63,12 +63,12 @@ $query = "select * from tbl_saldo";
                         <?php
                         if ($dompet['nominal_saldo'] > 50000) { ?>
                             <div>
-                                <button type="submit" class="btn btn-inverse-danger btn-fw">Tarik</button>
+                                <button type="submit" class="btn btn-inverse-danger btn-rounded btn-fw">Tarik</button>
                             </div>
                     </form>
                 <?php } else { ?>
                     <div>
-                        <button type="button" class="btn btn-inverse-danger btn-fw">Saldo Kurang</button>
+                        <button type="button" class="btn btn-inverse-danger btn-rounded btn-fw">Saldo Kurang</button>
                     </div>
                 <?php } ?>
 

@@ -19,6 +19,7 @@ class Verifikasi_ctrl extends CI_Controller
 
     public function pembayaran()
     {
+        $this->session->unset_userdata('flash');
         $byr = $this->SurveyAdmin_model->select_srvy();
 
         $data = array('byr' => $byr,);
@@ -34,6 +35,7 @@ class Verifikasi_ctrl extends CI_Controller
 
     public function edit_pembayaran()
     {
+        $this->session->set_flashdata('flash', 'di edit');
         $id = $this->input->post('id');
         $id_userr = $this->input->post('id_user');
         $sld = $this->SurveyAdmin_model->select_saldo($id_userr);
@@ -91,11 +93,22 @@ class Verifikasi_ctrl extends CI_Controller
 
         // var_dump($data);
 
-        redirect(base_url('Admin/verifikasi_ctrl/pembayaran'));
+        $byr = $this->SurveyAdmin_model->select_srvy();
+
+        $data = array('byr' => $byr,);
+        $dataa = array(
+            'title'  => 'GoSurvey/Verif Pembayaran - Admin',
+            'user'   => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
+        );
+
+        $this->load->view('Admin/UI/Header', $dataa);
+        $this->load->view('Admin/verifikasi/Verif_pembayaran', $data);
+        $this->load->view('Admin/UI/Footer');
     }
 
     public function topup()
     {
+
         $top = $this->SurveyAdmin_model->select_topup();
         $data = array('top' => $top,);
         $dataa = array(
@@ -110,6 +123,7 @@ class Verifikasi_ctrl extends CI_Controller
 
     public function edit_topup()
     {
+        $this->session->set_flashdata('flash', 'di edit');
         $id = $this->input->post('id');
         $data = [
 

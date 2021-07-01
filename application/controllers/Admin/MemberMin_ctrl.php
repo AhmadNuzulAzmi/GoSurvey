@@ -15,6 +15,8 @@ class MemberMin_ctrl extends CI_Controller
 
     public function index()
     {
+        $this->session->unset_userdata('flash');
+
         $dataa = array(
             'title'  => 'GoSurvey/Data Pengguna - Admin',
             'user'   => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
@@ -29,15 +31,19 @@ class MemberMin_ctrl extends CI_Controller
 
     public function hapus($data)
     {
+        $this->session->set_flashdata('flash', 'di hapus');
         $dataa = array(
             'title'  => 'GoSurvey/Hapus Data - Admin',
             'user'   => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
         );
 
-        $this->Pgn_model->delete($data);
-        $this->session->set_flashdata('flash', 'Dihapus');
+        $hapus = $this->Pgn_model->delete($data);
+
         $pgn = $this->Pgn_model->select_user();
         $data = array('pgn' => $pgn,);
+
+
+
 
         $this->load->view('Admin/UI/Header', $dataa);
         $this->load->view('Admin/Member/Data_member', $data);
@@ -50,7 +56,7 @@ class MemberMin_ctrl extends CI_Controller
         $id = $this->input->post('id_usr');
         $this->form_validation->set_rules('name', 'Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim');
-        $this->form_validation->set_rules('password', 'Password', 'required|trim');
+        // $this->form_validation->set_rules('password', 'Password', 'required|trim');
         $this->form_validation->set_rules('status', 'Status', 'required|trim');
 
 
@@ -67,6 +73,7 @@ class MemberMin_ctrl extends CI_Controller
 
     public function editaction()
     {
+        $this->session->set_flashdata('flash', 'di edit');
         $id = $this->input->post('id');
         $data = [
 
@@ -74,10 +81,10 @@ class MemberMin_ctrl extends CI_Controller
             'nama_usr' => $this->input->post('name'),
             'email_usr' => $this->input->post('email'),
             'image_usr' => "Default.png",
-            'Password_usr' => $this->input->post('password'),
+            // 'Password_usr' => $this->input->post('password'),
             'role_id' => $this->input->post('status'),
-            'is_active' => "1",
-            'date_created' => "Null"
+            'is_active' => "1"
+            // 'date_created' => "Null"
 
         ];
 
@@ -87,11 +94,21 @@ class MemberMin_ctrl extends CI_Controller
             $this->session->set_flashdata('edit', false);
         }
 
-        redirect(base_url('Admin/MemberMin_ctrl'));
+        $dataa = array(
+            'title'  => 'GoSurvey/Data Pengguna - Admin',
+            'user'   => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
+        );
+        $pgn = $this->Pgn_model->select_userr($dataa['user']['id_usr']);
+        $data = array('pgn' => $pgn,);
+
+        $this->load->view('Admin/UI/Header', $dataa);
+        $this->load->view('Admin/Member/Data_member', $data);
+        $this->load->view('Admin/UI/Footer');
     }
 
     public function register_pgn2()
     {
+        $this->session->set_flashdata('flash', ' di tambah');
         $this->form_validation->set_rules('name', 'Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim');
         $this->form_validation->set_rules('password', 'Password', 'required|trim');
@@ -114,8 +131,17 @@ class MemberMin_ctrl extends CI_Controller
 
             ];
 
-            $this->db->insert('tbl_user', $data);
-            redirect('Admin/MemberMin_ctrl');
+            $success = $this->db->insert('tbl_user', $data);
+            $dataa = array(
+                'title'  => 'GoSurvey/Data Pengguna - Admin',
+                'user'   => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
+            );
+            $pgn = $this->Pgn_model->select_userr($dataa['user']['id_usr']);
+            $data = array('pgn' => $pgn,);
+
+            $this->load->view('Admin/UI/Header', $dataa);
+            $this->load->view('Admin/Member/Data_member', $data);
+            $this->load->view('Admin/UI/Footer');
         }
     }
 }

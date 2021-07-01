@@ -1,3 +1,7 @@
+<?php
+foreach ($judul_task as $taskk) {
+    $a = $taskk->judul_task;
+} ?>
 <div class="main-panel">
     <div class="content-wrapper">
         <h3 class="page-title">
@@ -6,6 +10,12 @@
             </span> Member / Soal Survey
         </h3>
         <br />
+
+        <div class="card mb-5 mt-3">
+            <div class="card-body">
+                <h1 style="font-style: italic;" align="center"><?= $a; ?></h1>
+            </div>
+        </div>
 
         <form id="form" action="<?= base_url('Member/SoalSurvey_ctrl/jawabsoal'); ?>" method="POST">
             <input type="hidden" name="iduser" id="idusr" class="form-control" value="<?= $user['id_usr']; ?> ">

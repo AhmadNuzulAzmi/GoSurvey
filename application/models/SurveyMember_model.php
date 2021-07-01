@@ -46,6 +46,16 @@ class SurveyMember_model extends CI_Model
         return $this->db->query('select total_nominal from tbl_task  where id_task ="' . $id_task . '" ')->row_array();
     }
 
+    public function task_byidtask($id_task)
+    {
+        return $this->db->query('select judul_task from tbl_task  where id_task ="' . $id_task . '" ')->result();
+    }
+
+    public function jml_jawaban($id_task)
+    {
+        return $this->db->query('select count(id_jwb) as id_jwb from tbl_jawaban  where id_task ="' . $id_task . '" ')->row_array();
+    }
+
     public function jml_task($id_user)
     {
         return $this->db->query('select count(a.id_task) as id_task from tbl_task a, tbl_user b where a.id_usr = b.id_usr and a.id_usr != "' . $id_user . '"')->row_array();

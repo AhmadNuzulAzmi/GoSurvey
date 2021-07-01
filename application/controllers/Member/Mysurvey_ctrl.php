@@ -40,15 +40,19 @@ class Mysurvey_ctrl extends CI_Controller
 
         $data['id_task'] = $id;
 
+        $jml_jwb = $this->SurveyMember_model->jml_jawaban($id);;
+
         $soal       = $this->SurveyMember_model->tampil_soal($id);
         $soal_opt   = $this->SurveyMember_model->soal_option($id);
         $task       = $this->SurveyMember_model->tampil_alltask();
         $jwb        = $this->SurveyMember_model->jawaban($id);
         $data = array(
-            'soal'     => $soal,
-            'soal_opt' => $soal_opt,
-            'task'     => $task,
-            'jwb'      => $jwb
+            'soal'       => $soal,
+            'soal_opt'   => $soal_opt,
+            'task'       => $task,
+            'jwb'        => $jwb,
+            'judul_task' => $this->SurveyMember_model->task_byidtask($id),
+            'jml_jwb'    => $jml_jwb
         );
 
 

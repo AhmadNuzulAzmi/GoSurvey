@@ -1,8 +1,12 @@
+<?php
+foreach ($judul_task as $value) {
+    $a = $value->judul_task;
+} ?>
+
 <html>
 
 <head>
     <title>Export Jawaban Survey</title>
-
 </head>
 
 <body>
@@ -21,7 +25,8 @@
                 <div class="col-12 grid-margin">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Export Survey</h5><br />
+                            <h1 style="font-style: italic;" align="center"><?= $a; ?></h1>
+                            <h5 class="card-title">Export Survey</h5>
                             <div class="table-responsive">
 
                                 <table class="table" id="tbl_export">
@@ -38,10 +43,10 @@
 
                                     <tbody align="center">
                                         <?php
-                                        foreach ($jwb as $key => $value1) {
+                                        foreach ($jwb as $keyy => $value1) {
                                         ?>
                                             <tr height="50px">
-                                                <td> <?= ++$key ?> </td>
+                                                <td> <?= ++$keyy ?> </td>
                                                 <td> <?= $value1->nama_usr ?> </td>
                                                 <?php
 
@@ -54,16 +59,20 @@
                                                         <td><?php echo $item->answer ?></td>
                                             <?php }
                                                 }
-                                            } ?>
+                                            }
+                                            ?>
                                             </tr>
 
                                     </tbody>
                                 </table>
                                 <br />
-                                <br />
-                                <h4 style="font-style: italic; color: seagreen;">Jumlah Responden : <?= $key ?></h4>
+                                <?php
+                                foreach ($jml_jwb as $jml) {
+                                    $no = $jml; ?>
 
-                                <br />
+                                    <h4 style="font-style: italic; color: seagreen;">Jumlah Responden : <?= $no ?></h4>
+                                <?php } ?>
+
                                 <br />
                             </div>
                         </div>

@@ -22,9 +22,11 @@ class SoalSurvey_ctrl extends CI_Controller
             'user'   => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
         );
 
-        $dataa['task'] = $this->db->get_where('tbl_task', ['id_task' =>
-        $this->session->userdata('id_task')])->row_array();
         $data['id_task'] = $id;
+        $dataa['judul_task'] = $this->SurveyMember_model->task_byidtask($id);
+        // var_dump($dataa['judul_task']);
+        // die;
+
 
 
         $this->load->view('Member/UI/Header', $data);
@@ -75,14 +77,14 @@ class SoalSurvey_ctrl extends CI_Controller
 
         $data['id_task'] = $id;
 
-
         $soal = $this->SurveyMember_model->tampil_soal($id);
         $soal_opt = $this->SurveyMember_model->soal_option($id);
         $task = $this->SurveyMember_model->tampil_alltask();
         $data = array(
             'soal' => $soal,
             'soal_opt' => $soal_opt,
-            'task' => $task
+            'task' => $task,
+            'judul_task' => $this->SurveyMember_model->task_byidtask($id)
         );
 
         // var_dump($data);

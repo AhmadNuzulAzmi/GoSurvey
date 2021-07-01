@@ -32,7 +32,7 @@
                   <?php } else { ?>
                   <?php } ?>
                   <p class="mb-4">Author <?php echo $value->nama_usr ?></p>
-                  <a class="btn btn-success btn-rounded btn-fw" href="<?= site_url('/Member/Mysurvey_ctrl/tampil_jwbsurvey/' . $value->id_task); ?>">Lihat Survey</a>
+                  <a class="btn btn-success btn-rounded btn-fw" href="<?= site_url('/Member/Mysurvey_ctrl/tampil_jwbsurvey/' . $value->id_task); ?>">Lihat Jawaban</a>
                   &nbsp; &nbsp;
                   <?php if ($value->jmlrespon_task != 0) { ?>
                     <a class="btn btn-danger btn-rounded btn-fw" href="<?= site_url('/Member/Mysurvey_ctrl/akhir_survey/' . $value->id_task); ?>">Akhiri Survey</a>

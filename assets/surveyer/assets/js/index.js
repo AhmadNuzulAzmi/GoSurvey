@@ -6,7 +6,7 @@ function addNewForm() {
   total_number++;
   index_soal++;
   const divCard = document.createElement("div");
-  divCard.setAttribute("class", "card p-2 mt-3");
+  divCard.setAttribute("class", "card p-5 mt-4");
   form.appendChild(divCard);
 
   const buttonDel = document.createElement("button");

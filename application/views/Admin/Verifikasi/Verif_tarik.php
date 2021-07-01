@@ -1,6 +1,7 @@
 <script src="assets/surveyer/assets/js/sweetalert2.all.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <!-- partial -->
+<div class="flash-data6" id="flash" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
 <div class="main-panel">
     <div class="content-wrapper">
         <h3 class="page-title">

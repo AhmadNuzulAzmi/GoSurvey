@@ -15,7 +15,7 @@ class Harga_ctrl extends CI_Controller
 
     public function index()
     {
-        // $this->session->unset_userdata('flash');
+        $this->session->unset_userdata('flash');
         $harga = $this->Pgn_model->select_harga();
         $data = array('harga' => $harga,);
         $dataa = array(
@@ -70,7 +70,16 @@ class Harga_ctrl extends CI_Controller
         // var_dump($data);
         // die;
 
-        redirect('Admin/Harga_ctrl');
+        $harga = $this->Pgn_model->select_harga();
+        $data = array('harga' => $harga,);
+        $dataa = array(
+            'title'  => 'GoSurvey/Setting Rek - Admin',
+            'user'   => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
+        );
+
+        $this->load->view('Admin/UI/Header', $dataa);
+        $this->load->view('Admin/Setting/harga', $data);
+        $this->load->view('Admin/UI/Footer');
     }
     public function hapus_Saldo($data)
     {
@@ -81,6 +90,15 @@ class Harga_ctrl extends CI_Controller
         $harga = $this->Pgn_model->select_harga();
         $data = array('harga' => $harga,);
 
-        redirect('Admin/Harga_ctrl');
+        $harga = $this->Pgn_model->select_harga();
+        $data = array('harga' => $harga,);
+        $dataa = array(
+            'title'  => 'GoSurvey/Setting Rek - Admin',
+            'user'   => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
+        );
+
+        $this->load->view('Admin/UI/Header', $dataa);
+        $this->load->view('Admin/Setting/harga', $data);
+        $this->load->view('Admin/UI/Footer');
     }
 }

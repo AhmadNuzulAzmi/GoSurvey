@@ -108,7 +108,7 @@ class Verifikasi_ctrl extends CI_Controller
 
     public function topup()
     {
-
+        $this->session->unset_userdata('flash');
         $top = $this->SurveyAdmin_model->select_topup();
         $data = array('top' => $top,);
         $dataa = array(
@@ -149,11 +149,21 @@ class Verifikasi_ctrl extends CI_Controller
 
             $this->session->set_flashdata('edit', false);
         }
-        redirect(base_url('Admin/Verifikasi_ctrl/topup'));
+        $top = $this->SurveyAdmin_model->select_topup();
+        $data = array('top' => $top,);
+        $dataa = array(
+            'title'  => 'GoSurvey/Verif Topup - Admin',
+            'user'   => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
+        );
+
+        $this->load->view('Admin/UI/Header', $dataa);
+        $this->load->view('Admin/verifikasi/Verif_topup', $data);
+        $this->load->view('Admin/UI/Footer');
     }
 
     public function tarik()
     {
+        $this->session->unset_userdata('flash');
         $trk = $this->SurveyAdmin_model->select_tarik();
         $data = array('trk' => $trk,);
         $dataa = array(
@@ -168,6 +178,7 @@ class Verifikasi_ctrl extends CI_Controller
 
     public function edit_tarik()
     {
+        $this->session->set_flashdata('flash', 'di edit');
         $config['upload_path']          = './assets/gambar/dompet';
         $config['allowed_types']        = 'gif|jpg|png';
         $config['overwrite']            = true;
@@ -209,7 +220,16 @@ class Verifikasi_ctrl extends CI_Controller
         }
         // var_dump($data);
         // die;
-        redirect(base_url('Admin/Verifikasi_ctrl/tarik'));
+        $trk = $this->SurveyAdmin_model->select_tarik();
+        $data = array('trk' => $trk,);
+        $dataa = array(
+            'title'  => 'GoSurvey/Verif Tarik - Admin',
+            'user'   => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
+        );
+
+        $this->load->view('Admin/UI/Header', $dataa);
+        $this->load->view('Admin/verifikasi/Verif_tarik', $data);
+        $this->load->view('Admin/UI/Footer');
 
         // var_dump($id);
         // die;
@@ -220,6 +240,7 @@ class Verifikasi_ctrl extends CI_Controller
 
     public function return()
     {
+        $this->session->unset_userdata('flash');
         $byr = $this->SurveyAdmin_model->select_srvydone();
 
         $data = array('byr' => $byr,);
@@ -235,6 +256,7 @@ class Verifikasi_ctrl extends CI_Controller
 
     public function edit_return()
     {
+        $this->session->set_flashdata('flash', 'di edit');
         $id = $this->input->post('id');
         $id_userr = $this->input->post('id_user');
         $sld = $this->SurveyAdmin_model->select_saldo($id_userr);
@@ -273,6 +295,16 @@ class Verifikasi_ctrl extends CI_Controller
         $this->db->where('id_usr', $id_userr);
         $this->db->update('tbl_saldo');
 
-        redirect(base_url('Admin/verifikasi_ctrl/return'));
+        $byr = $this->SurveyAdmin_model->select_srvydone();
+
+        $data = array('byr' => $byr,);
+        $dataa = array(
+            'title'  => 'GoSurvey/Verif Return - Admin',
+            'user'   => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
+        );
+
+        $this->load->view('Admin/UI/Header', $dataa);
+        $this->load->view('Admin/verifikasi/Verif_return', $data);
+        $this->load->view('Admin/UI/Footer');
     }
 }

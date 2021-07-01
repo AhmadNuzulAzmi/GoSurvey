@@ -1,6 +1,7 @@
 <script src="assets/surveyer/assets/js/sweetalert2.all.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <!-- partial -->
+<div class="flash-data7" id="flash" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
 <div class="main-panel">
     <div class="content-wrapper">
         <h3 class="page-title">
@@ -46,19 +47,21 @@
                                     if ($value->total_nominal != 0) {
                                     ?>
                                         <th style="color: red;"> Proses </th>
-                                    <?php
-                                    } elseif ($value->total_nominal = 0) {
 
-                                    ?>
+                                        <th>
+                                            <a href="#" data-target="#exampleModal" class="edit3" data-toggle="modal" data-id="<?php echo $value->id_task; ?>" data-id_usr="<?php echo $value->id_usr; ?>" data-pembayaran="<?php echo $value->pembayaran; ?>" data-total_nominal="<?php echo $value->total_nominal; ?>" data-total_nominal1="<?php echo $value->total_nominal; ?>" data-status="<?php echo $value->status; ?>">
+                                                <label class=" badge badge-info">Return</label></a>
+                                        </th>
+                                    <?php
+                                    } else { ?>
                                         <th style="color: green;"> Done </th>
+
+                                        <th style="color: green;"> _______ </th>
+
                                     <?php
                                     }
                                     ?>
 
-                                    <th>
-                                        <a href="#" data-target="#exampleModal" class="edit3" data-toggle="modal" data-id="<?php echo $value->id_task; ?>" data-id_usr="<?php echo $value->id_usr; ?>" data-pembayaran="<?php echo $value->pembayaran; ?>" data-total_nominal="<?php echo $value->total_nominal; ?>" data-total_nominal1="<?php echo $value->total_nominal; ?>" data-status="<?php echo $value->status; ?>">
-                                            <label class=" badge badge-info">Return</label></a>
-                                    </th>
                                     <!-- Modal -->
 
                                 </tr>

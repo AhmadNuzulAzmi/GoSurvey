@@ -49,6 +49,11 @@ class Pgn_model extends CI_Model
 		$this->db->where('no_bank', $data);
 		$this->db->delete('tbl_bank');
 	}
+	public function delete_saldo($data)
+	{
+		$this->db->where('id', $data);
+		$this->db->delete('tbl_harga_saldo');
+	}
 
 	public function select_user()
 	{
@@ -64,6 +69,10 @@ class Pgn_model extends CI_Model
 	{
 		return $this->db->get('tbl_bank')->result();
 	}
+	public function select_harga()
+	{
+		return $this->db->get('tbl_harga_saldo')->result();
+	}
 
 	public function insert_user($data)
 	{
@@ -72,7 +81,7 @@ class Pgn_model extends CI_Model
 	public function ubahdatapgn($data, $id)
 	{
 
-		$this->db->update('pengguna', $data, array('id_pgn' => $id));
+		$this->db->update('tbl_user', $data, array('id_usr' => $id));
 		return ($this->db->affected_rows() > 0) ? TRUE : FALSE;
 	}
 	public function ubahdatabank($data, $id)

@@ -51,7 +51,16 @@
   <script src="<?php echo base_url(); ?>assets/admin/assets/alert/myscript.js"></script>
   <!-- End custom js for this page -->
 </body>
-
+<!-- <script>
+  var flashdata = $('#flash').data('flash');
+  if (flash) {
+    swall.fire({
+      icon: 'success',
+      tittle: 'Success',
+      text: 'Data Berhasil Ditambahkan!'
+    })
+  }
+</script> -->
 <script>
   $(function() {
     $('#modal').modal('toggle');
@@ -163,6 +172,23 @@
   $(document).ready(function() {
     $('#data_tables').DataTable();
   });
+</script>
+
+<script>
+  $(function() {
+    $('#modal').modal('toggle');
+  });
+  $(".harga").on("click", function() {
+    const id = $(this).data('id');
+    const harga = $(this).data('harga');
+    const jml_saldo = $(this).data('jml_saldo');
+
+
+    $("#id").attr("value", id);
+    $("#harga").attr("value", harga);
+    $("#jml_saldo").attr("value", jml_saldo);
+
+  })
 </script>
 
 </html>

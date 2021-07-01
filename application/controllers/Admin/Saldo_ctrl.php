@@ -15,6 +15,7 @@ class Saldo_ctrl extends CI_Controller
 
     public function index()
     {
+        $this->session->unset_userdata('flash');
         $saldo = $this->Pgn_model->select_bank();
         $data = array('saldo' => $saldo,);
         $dataa = array(
@@ -29,6 +30,9 @@ class Saldo_ctrl extends CI_Controller
 
     public function register_bank()
     {
+
+
+        $this->session->set_flashdata('flash', 'di tambah');
         $config['upload_path']          = './assets/gambar/logo';
         $config['allowed_types']        = 'gif|jpg|png';
         $config['overwrite']            = true;
@@ -51,7 +55,16 @@ class Saldo_ctrl extends CI_Controller
         ];
 
         $this->db->insert('tbl_bank', $data);
-        redirect('Admin/Saldo_ctrl');
+        $saldo = $this->Pgn_model->select_bank();
+        $data = array('saldo' => $saldo,);
+        $dataa = array(
+            'title'  => 'GoSurvey/Setting Rek - Admin',
+            'user'   => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
+        );
+
+        $this->load->view('Admin/UI/Header', $dataa);
+        $this->load->view('Admin/Setting/saldo', $data);
+        $this->load->view('Admin/UI/Footer');
     }
 
     public function edit2($data)
@@ -77,6 +90,8 @@ class Saldo_ctrl extends CI_Controller
 
     public function editaction2()
     {
+
+        $this->session->set_flashdata('flash', 'di edit');
         $config['upload_path']          = './assets/gambar/logo';
         $config['allowed_types']        = 'gif|jpg|png';
         $config['overwrite']            = true;
@@ -105,18 +120,36 @@ class Saldo_ctrl extends CI_Controller
             $this->session->set_flashdata('edit2', false);
         }
 
-        redirect(base_url('Admin/Saldo_ctrl'));
+        $saldo = $this->Pgn_model->select_bank();
+        $data = array('saldo' => $saldo,);
+        $dataa = array(
+            'title'  => 'GoSurvey/Setting Rek - Admin',
+            'user'   => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
+        );
+
+        $this->load->view('Admin/UI/Header', $dataa);
+        $this->load->view('Admin/Setting/saldo', $data);
+        $this->load->view('Admin/UI/Footer');
     }
 
     public function hapus_bank($data)
     {
 
-
+        $this->session->set_flashdata('flash', 'di hapus');
         $this->Pgn_model->delete_bank($data);
-        $this->session->set_flashdata('flash', 'Dihapus');
         $pgn = $this->Pgn_model->select_bank();
         $data = array('pgn' => $pgn,);
 
-        redirect('Admin/Saldo_ctrl');
+
+        $saldo = $this->Pgn_model->select_bank();
+        $data = array('saldo' => $saldo,);
+        $dataa = array(
+            'title'  => 'GoSurvey/Setting Rek - Admin',
+            'user'   => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
+        );
+
+        $this->load->view('Admin/UI/Header', $dataa);
+        $this->load->view('Admin/Setting/saldo', $data);
+        $this->load->view('Admin/UI/Footer');
     }
 }

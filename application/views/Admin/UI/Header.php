@@ -148,10 +148,13 @@
             </a>
             <div class="collapse" id="ui-basicc">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="<?= site_url('/Admin/Saldo_ctrl'); ?>">Data Saldo</a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?= site_url('/Admin/Saldo_ctrl'); ?>">Data Rekening</a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?= site_url('/Admin/Harga_ctrl'); ?>">Data Saldo</a></li>
                 <!-- <li class="nav-item"> <a class="nav-link" href="<?= site_url('Admin/Verifikasi_ctrl/pembayaran'); ?>">Pembayaran</a></li> -->
               </ul>
+
             </div>
+
           </li>
         </ul>
       </nav>

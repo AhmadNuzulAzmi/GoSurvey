@@ -64,7 +64,16 @@
                         <td style="color: red;"> ------ </td>
                       <?php
                       } else { ?>
-                        <td><img src="<?= base_url('assets/gambar/dompet/') . $value->bukti ?>" /></td>
+                        <td onclick="Swal.fire({
+                            title: '',
+                            text: 'Bukti Transfer',
+                            imageUrl: '<?= base_url('assets/gambar/dompet/') . $value->bukti ?>',
+                            imageWidth: 400,
+                            imageHeight: 400,
+                            imageAlt: 'Custom image',
+                            })">
+                          <img src="<?= base_url('assets/gambar/dompet/') . $value->bukti ?>" />
+                        </td>
                       <?php }
                       if ($value->status == "Unverified") { ?>
                         <td style="color: red;"><b> Proses </b></td>

@@ -54,7 +54,7 @@
                                                     text: 'Bukti Transfer',
                                                     imageUrl: '<?= base_url('assets/gambar/pembayaran/') . $value->bukti ?>',
                                                     imageWidth: 400,
-                                                    imageHeight: 200,
+                                                    imageHeight: 400,
                                                     imageAlt: 'Custom image',
                                                     })">
                                             <img src="<?= base_url('assets/gambar/pembayaran/') . $value->bukti ?>" />

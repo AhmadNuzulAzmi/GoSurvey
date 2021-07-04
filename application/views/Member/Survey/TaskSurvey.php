@@ -1,5 +1,11 @@
 <div class="main-panel">
   <div class="content-wrapper">
+    <h3 class="page-title">
+      <span class="page-title-icon bg-gradient-info text-white mr-2">
+        <i class="mdi mdi-pen"></i>
+      </span> Member / Buat Survey
+    </h3> <br />
+
     <div class="page-header">
       <nav aria-label="breadcrumb">
       </nav>
@@ -89,7 +95,7 @@
 
         </div>
 
-        <div class="mx-3 card" style="height: 6cm;">
+        <div class="mx-3 card" style="height: 7cm;">
           <div class="card-body">
             <h1 class="card-title">Pembayaran</h1>
             <br />
@@ -97,23 +103,29 @@
             <div class="form-group">
               <h6 for="nominal">Nominal Survey :
 
-                <output style="font-size: 14px;" id="penjumlahan"></output>
+                <output style="font-size: 14px;" id="demoo"></output>
               </h6>
+              <br />
+              <h6 for="nominal">Jumlah Responden :
+
+                <output style="font-size: 14px;" id="demoo1"></output>
+              </h6>
+              <hr>
+              </br>
 
               <div class="input-group col-xs-12">
-                <!-- <input type="text" class="form-control file-upload-info" disabled> -->
-                <!-- <span class="input-group-append">
-                  <button class="file-upload-browse btn btn-gradient-info" type="button">Upload</button>
-                </span> -->
+                <h6>Total Pembayaran:
+                  Rp.
+                  <output style="font-size: 14px;" id="total" name="ttl_nominal"></output>
+                  <input type="hidden" id="total2" name="ttl_nominal">
+                  <output style="font-size: 14px;" id="penjumlahan" hidden></output>
+                </h6>
               </div>
             </div>
-            <hr>
 
 
-            <h6>Total Pembayaran:
-              Rp.
-              <output style="font-size: 14px;" id="total" name="ttl_nominal"></output>
-              <input type="hidden" id="total2" name="ttl_nominal">
+
+
           </div>
 
 
@@ -125,7 +137,7 @@
               <div class="form-group">
                 <h6 for="nominal">Saldo Dompet : Rp <?= $dompet['nominal_saldo']; ?>
                   <input type="hidden" value="<?= $dompet['nominal_saldo']; ?>" id="saldo">
-                  <output style="font-size: 14px;" id="penjumlahan"></output>
+
                 </h6>
 
                 <div class="input-group col-xs-12">
@@ -347,7 +359,6 @@
 
 
 <script>
-  // Add the following code if you want the name of the file appear on select
   $(".custom-file-input").on("change", function() {
     var fileName = $(this).val().split("\\").pop();
     $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
@@ -356,6 +367,10 @@
   var slider = document.getElementById("myRange");
   var output = document.getElementById("demo");
   var outputt = document.getElementById("demo1");
+
+  var out = document.getElementById("demoo");
+  var outt = document.getElementById("demoo1");
+
   var slider2 = document.getElementById("myRange2");
   var output2 = document.getElementById("demo2");
   var output3 = document.getElementById("penjumlahan");
@@ -366,8 +381,12 @@
   let nominal = 0;
   const saldo = document.getElementById('saldo');
 
-  output.innerHTML = parseInt(slider.value)
+  output.innerHTML = parseInt(slider.value);
   outputt.value = parseInt(slider.value);
+
+  out.innerHTML = parseInt(slider.value);
+  outt.innerHTML = slider2.value;
+
   output2.innerHTML = slider2.value;
   output3.innerHTML = slider.value;
   output4.value = slider.value;
@@ -377,6 +396,9 @@
   slider.oninput = function() {
     output.innerHTML = parseInt(this.value)
     outputt.value = parseInt(this.value)
+
+    out.innerHTML = parseInt(slider.value)
+
     output3.innerHTML = parseInt(this.value)
     output4.value = parseInt(this.value)
     output5.value = parseInt(this.value)
@@ -390,6 +412,7 @@
 
   slider2.oninput = function() {
     output2.innerHTML = this.value;
+    outt.innerHTML = this.value;
     var bilangan1 = parseInt(slider.value);
     var bilangan2 = parseInt(slider2.value);
 
@@ -414,7 +437,7 @@
 
   }
 
-  const file = document.getElementById('upload_filee');
+
   var select1 = document.getElementById('select_option');
   var opt = document.createElement('option');
   opt.appendChild(document.createTextNode('Saldo Dompet'));
@@ -459,8 +482,6 @@
       select1.appendChild(opt);
     }
 
-
-    // document.getElementById("total").value = parseInt(total)
     document.getElementById("total").innerHTML = parseInt(total)
     document.getElementById("total2").value = parseInt(total)
 
@@ -475,54 +496,14 @@
 
     return total;
   }
-  // const total2 = document.getElementById('total2');
-  // // var total2 = parseInt(ttl);
+  const file = document.getElementById('upload_filee');
+  // const pil = select1.options[select1.selectedIndex].value;
+  // console.log(pil);
 
-  // const saldo = document.getElementById('saldo');
-  // // const saldo = parseInt(sal);
-
-  // var select = document.getElementById('select_option');
-  // var opt = document.createElement('option');
-
-  // opt.appendChild(document.createTextNode('Saldo Dompet'));
-  // opt.value = 'Saldo';
-  // console.log(total2);
-  // if (saldo.value >= total2.value) {
-  //   select.appendChild(opt);
-  // } else {
-  //   select.removeChild(opt);
+  // if (pil == "Saldo") {
+  //   document.getElementById("upload_filee").style.visibility = 'hidden';
   // }
-
-  // function kode_unik() {
-  //   var output3 = document.getElementById("kode");
-  //   var x = 900;
-  //   var acak = Math.floor(Math.random() * x) + 99;
-  //   // output3.innerHTML = acak;
-  // }
-
-  // const total2 = document.getElementById('total2');
-  // const option = document.getElementById('option_saldo');
-  // const file = document.getElementById('upload_filee');
-  // const saldo = document.getElementById('saldo');
-  // console.log(total2);
-
-  // var select = document.getElementById('select_option');
-  // var opt = document.createElement('option');
-  // opt.appendChild(document.createTextNode('Saldo Dompet'));
-  // opt.value = 'Saldo';
-
-  // total2.addEventListener("change", (e) => {
-  //   e.preventDefault()
-
-  //   if (select.children.length < 5) {
-  //     if (saldo.value >= total2.value) {
-  //       select.appendChild(opt);
-  //     } else {
-  //       select.removeChild(opt);
-  //     }
-  //   }
-  //   console.log(saldo.value >= total2.value, saldo.value, total2.value)
-  // })
+  file.hidden = select1.options[select1.selectedIndex].value == "Saldo";
 
 
   total();

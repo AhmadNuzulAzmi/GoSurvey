@@ -44,7 +44,16 @@
                       if ($value->pembayaran == "Saldo") { ?>
                         <td style="color: red;"> ------ </td>
                       <?php } else { ?>
-                        <td> <img src="<?= base_url('assets/gambar/pembayaran/') . $value->bukti ?>" /></td>
+                        <td onclick="Swal.fire({
+                            title: '',
+                            text: 'Bukti Transfer',
+                            imageUrl: '<?= base_url('assets/gambar/pembayaran/') . $value->bukti ?>',
+                            imageWidth: 400,
+                            imageHeight: 400,
+                            imageAlt: 'Custom image',
+                            })">
+                          <img src="<?= base_url('assets/gambar/pembayaran/') . $value->bukti ?>" />
+                        </td>
                       <?php } ?>
                       <?php
 
@@ -100,17 +109,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-<!-- end tabel survey -->
-
-<!-- <br/><br/>
-    <div>
-    <button id="btn_hapus"> Coba </button> 
-    </div> -->
-
 
 
 <script>

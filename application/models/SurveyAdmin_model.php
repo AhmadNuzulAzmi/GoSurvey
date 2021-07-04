@@ -29,7 +29,7 @@ class SurveyAdmin_model extends CI_Model
 
     public function select_srvydone()
     {
-        return $this->db->query('select * from tbl_task a, tbl_user b where a.status = "verified" and a.jmlrespon_task = 0 and a.total_nominal != 0 and a.id_usr = b.id_usr')->result();
+        return $this->db->query('select * from tbl_task a, tbl_user b where a.status = "verified" and a.jmlrespon_task = 0  and a.id_usr = b.id_usr')->result();
     }
 
     public function select_saldo($id_user)

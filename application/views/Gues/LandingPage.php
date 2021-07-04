@@ -684,7 +684,7 @@
                 <div class="info-box">
                   <i class="bi bi-geo-alt"></i>
                   <h3>Alamat</h3>
-                  <p>Bojongsoang, <br>Bandung, BDO 40287</p>
+                  <p>Rumbai, Pekanbaru <br>Riau, 28265</p>
                 </div>
               </div>
               <div class="col-md-2">

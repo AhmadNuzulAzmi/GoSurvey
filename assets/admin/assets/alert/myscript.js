@@ -3,6 +3,7 @@ const flashData2 = $('.flash-data2').data('flashdata');
 const flashData3 = $('.flash-data3').data('flashdata');
 const flashDataBayar = $('.flash-data4').data('flashdata');
 const flashDataTopUp = $('.flash-data5').data('flashdata');
+
 if (flashData) {
 
     Swal.fire({
@@ -53,5 +54,11 @@ if (flashDataTopUp) {
     });
     
 }
-
-
+if (flashDataTarik) {
+     Swal.fire({
+        icon: 'success',
+        title: 'Data Tarik',
+        text: 'Berhasil ' + flashDataTarik
+       
+    });
+}

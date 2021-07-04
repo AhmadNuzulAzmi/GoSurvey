@@ -49,6 +49,7 @@
 
   <script src="<?php echo base_url(); ?>assets/admin/assets/alert/sweetalert2.all.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/admin/assets/alert/myscript.js"></script>
+  <script src="<?php echo base_url(); ?>assets/admin/assets/alert/myscript2.js"></script>
   <!-- End custom js for this page -->
 </body>
 <!-- <script>

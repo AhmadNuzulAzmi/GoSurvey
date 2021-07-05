@@ -467,8 +467,7 @@
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
-                <p>
-                  Saya dari perusahaan google, setelah menggunakan GoSurvey saya lebih mudah mendapatkan data dan mengelola data tersebut untuk mendapatkan strategi pemasaran dari hasil survey yang akurat.
+                <p>Saya sebagai mahasiswa tingkat akhir, setelah menggunakan GoSurvey saya lebih mudah mendapatkan data dan mengelola data tersebut untuk melakukan analisis data yang dibutuhkan dalam PA.
                 </p>
                 <div class="profile mt-auto">
                   <img src="<?php echo base_url(); ?>assets/user/assets/img/testimonials/andra.jpg" class="testimonial-img" alt="">

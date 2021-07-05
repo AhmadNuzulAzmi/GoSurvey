@@ -96,7 +96,7 @@
 
         </div>
 
-        <div class="mx-3 card" style="height: 7cm;">
+        <div class="mx-3 card" style="height: 8cm;">
           <div class="card-body">
             <h1 class="card-title">Pembayaran</h1>
             <br />
@@ -110,6 +110,10 @@
               <h6 for="nominal">Jumlah Responden :
 
                 <output style="font-size: 14px;" id="demoo1"></output>
+              </h6>
+              <br />
+              <h6 for="nominal">Biaya Admin :
+                <output style="font-size: 14px;">2500</output>
               </h6>
               <hr>
               </br>
@@ -420,7 +424,7 @@
     var penjumlahan = (bilangan1 * bilangan2 || bilangan2 * bilangan1);
 
     document.getElementById("penjumlahan").innerHTML = penjumlahan;
-    var total = (bilangan1 * bilangan2);
+    var total = (bilangan1 * bilangan2 + 2500);
     document.getElementById("total").innerHTML = parseInt(total)
     document.getElementById("total2").value = parseInt(total)
 
@@ -478,7 +482,7 @@
     // output3.innerHTML = acak;
     var bilangan1 = parseInt(slider.value);
     var bilangan2 = parseInt(slider2.value);
-    var total = (bilangan1 * bilangan2);
+    var total = (bilangan1 * bilangan2 + 2500);
     if (total < parseInt(saldo.value)) {
       select1.appendChild(opt);
     }

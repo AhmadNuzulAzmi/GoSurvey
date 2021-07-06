@@ -56,7 +56,7 @@
                                     } else { ?>
                                         <th style="color: green;"> Done </th>
 
-                                        <th style="color: green;"> _______ </th>
+                                        <th style="color: green;"> ----- </th>
 
                                     <?php
                                     }

@@ -499,7 +499,7 @@
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                  Saya sebagai mahasiswa menuju tingkat akhir, sangat beruntung dapat menggunakan website ini sebagai media untuk mendapatkan data dalam penelitian saya.                
+                  Saya sebagai mahasiswa menuju tingkat akhir, sangat beruntung dapat menggunakan website ini sebagai media untuk mendapatkan data dalam penelitian saya.
                 </p>
                 <div class="profile mt-auto">
                   <img src="<?php echo base_url(); ?>assets/user/assets/img/testimonials/fikri.jpg" class="testimonial-img" alt="">
@@ -515,7 +515,7 @@
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                Saya sebagai mahasiswa, sangat beruntung dengan adanya website ini yang sangat berguna untuk saya yang sedang sibuk penelitian .
+                  Saya sebagai mahasiswa, sangat beruntung dengan adanya website ini yang sangat berguna untuk saya yang sedang sibuk penelitian .
                 </p>
                 <div class="profile mt-auto">
                   <img src="<?php echo base_url(); ?>assets/user/assets/img/testimonials/farah.jpg" class="testimonial-img" alt="">
@@ -531,8 +531,8 @@
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                Saya sebagai mahasiswa Tingkat Akhir, merasa sangat terbantu dengan adanya GoSurvey untuk membuat kuisioner sebagai data untuk penelitian saya sebagai syarat untuk lulus.
-              </p>
+                  Saya sebagai mahasiswa Tingkat Akhir, merasa sangat terbantu dengan adanya GoSurvey untuk membuat kuisioner sebagai data untuk penelitian saya sebagai syarat untuk lulus.
+                </p>
                 <div class="profile mt-auto">
                   <img src="<?php echo base_url(); ?>assets/user/assets/img/testimonials/ghea.jpg" class="testimonial-img" alt="">
                   <h3>Ghea Sundari Firnandi</h3>
@@ -557,7 +557,7 @@
 
         <header class="section-header">
           <h2>Tim</h2>
-          <p>Tim kerja keras kami</p>
+          <p>Tim Kami</p>
         </header>
 
         <div class="row gy-4">
@@ -707,7 +707,7 @@
                   <p>Senin-Jumat<br>09.00 - 17.00 WIB</p>
                 </div>
               </div>
-              
+
             </div>
 
           </div>

@@ -53,4 +53,9 @@ class Task_model extends CI_Model
 	{
 		$this->db->insert('tbl_filter', $data);
 	}
+
+	public function select_nominaltask($id_task)
+	{
+		return $this->db->query('select total_nominal from tbl_task where id_task = "' . $id_task . '"')->result();
+	}
 }

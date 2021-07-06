@@ -168,8 +168,8 @@ class Auth extends CI_Controller
             // $this->db->insert('tbl_user', $data);
             $data_saldo = [
                 'id_usr' => $id_user,
-                'nominal_saldo' => 0
-
+                'nominal_saldo' => 0,
+                'status' => "USER"
             ];
             $this->Pgn_model->insert_saldo($data_saldo);
 

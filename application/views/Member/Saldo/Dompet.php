@@ -52,10 +52,10 @@
 
                       <?php
                       if ($value->transaksi == "Topup" || $value->transaksi == "Jawab Survey" || $value->transaksi == "Return Dana") { ?>
-                        <td style="color: seagreen;"><b> + <?php echo $value->nominal_trans ?> </b></td>
+                        <td style="color: seagreen;"><b> + Rp. <?php echo number_format($value->nominal_trans, 2, ',', '.'); ?> </b></td>
                       <?php
                       } else { ?>
-                        <td style="color: red;"><b> - <?php echo $value->nominal_trans ?></b></td>
+                        <td style="color: red;"><b> - Rp. <?php echo number_format($value->nominal_trans, 2, ',', '.'); ?></b></td>
                       <?php } ?>
 
                       <td><?php echo date('d F Y', $value->wkt_trans) ?></td>

@@ -20,6 +20,15 @@ foreach ($judul_task as $taskk) {
         <form id="form" action="<?= base_url('Member/SoalSurvey_ctrl/jawabsoal'); ?>" method="POST">
             <input type="hidden" name="iduser" id="idusr" class="form-control" value="<?= $user['id_usr']; ?> ">
 
+            <!-- <?php
+                    foreach ($admin as $adm) {
+                        echo $adm->kd_saldo;
+                    ?>
+                <input type="text" name="idadm" id="idamd" class="form-control" value="<?= $adm->kd_saldo ?> ">
+                <input type="text" name="saldo_adm" id="nom" class="form-control" value="<?= $adm->nominal_saldo ?> ">
+            <?php } ?> -->
+
+
             <?php
             foreach ($soal as $keyy => $value) {
                 foreach ($task as $taskk) { ?>

@@ -31,7 +31,7 @@
                         <h3 class="font-weight-normal mb-3"><?php echo $value->judul_task ?><i class="mdi mdi-chart-line mdi-24px float-right"></i>
                         </h3>
                         <h5 class="font-weight-normal mb-3"><?php echo $value->desk_task ?></h5>
-                        <h4 class="mb-4">Rp. <?= number_format($value->nominal_task, 2, ',', '.') ?></h4>
+                        <h4 class="mb-4">Rp. <?= number_format($value->nominal_task - 250, 2, ',', '.') ?></h4>
                         <p class="mb-4">Author <?php echo $value->nama_usr ?></p>
 
                         <a href="<?= base_url('Member/SoalSurvey_ctrl/tampil_soal/' . $value->id_task) ?>" type="button" class="btn btn-info btn-rounded btn-fw">Jawab Survey</a>
@@ -68,7 +68,7 @@
                           <h3 class="font-weight-normal mb-3"><?php echo $value->judul_task ?><i class="mdi mdi-chart-line mdi-24px float-right"></i>
                           </h3>
                           <h5 class="font-weight-normal mb-3"><?php echo $value->desk_task ?></h5>
-                          <h4 class="mb-5">Rp. <?= number_format($value->nominal_task, 2, ',', '.') ?></h4>
+                          <h4 class="mb-5">Rp. <?= number_format($value->nominal_task - 250, 2, ',', '.') ?></h4>
                           <p>Author <?php echo $value->nama_usr ?></p>
 
                           <a href="<?= base_url('Member/SoalSurvey_ctrl/tampil_soal/' . $value->id_task) ?>" type="button" class="btn btn-info btn-rounded btn-fw">Jawab Survey</a>

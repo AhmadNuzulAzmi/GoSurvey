@@ -35,13 +35,23 @@ class Verifikasi_ctrl extends CI_Controller
 
     public function edit_pembayaran()
     {
+        $dataa = array(
+            'title'  => 'GoSurvey/Verif Pembayaran - Admin',
+            'user'   => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
+        );
+
         $this->session->set_flashdata('flash', 'di edit');
-        $id = $this->input->post('id');
+        $id_task = $this->input->post('id');
         $id_userr = $this->input->post('id_user');
         $sld = $this->SurveyAdmin_model->select_saldo($id_userr);
+        $sld_admin = $this->SurveyAdmin_model->select_saldo($dataa['user']['id_usr']);
 
         foreach ($sld as $a) {
             $saldo =  $a->nominal_saldo;
+        }
+
+        foreach ($sld_admin as $sld) {
+            $saldo_adm =  $sld->nominal_saldo;
         }
 
         $bayar = $this->input->post('bayar');
@@ -57,24 +67,35 @@ class Verifikasi_ctrl extends CI_Controller
         $bukti = "";
         $status = "Verified";
         $kode = 0;
+        $id_admin = $dataa['user']['id_usr'];
 
         $data_input1 = array(
             'id'            => $kode,
             'id_usr'        => $id_userr,
             'transaksi'     => $trans,
             'nominal_trans' => $total,
-            'wkt_trans'     => time(),
+            'wkt_trans'     => $tgl,
             'bukti'         => $bukti,
             'status'        => $status
         );
+
 
         if ($bayar == "Saldo") {
             $this->db->set('nominal_saldo', $saldo - $total);
             $this->db->where('id_usr', $id_userr);
             $this->db->update('tbl_saldo');
+
+            $this->db->set('nominal_saldo', $saldo_adm + 2500);
+            $this->db->where('id_usr', $id_admin);
+            $this->db->update('tbl_saldo');
+
+            // $this->db->set('total_nominal', $total - 2500);
+            // $this->db->where('id_task', $id_task);
+            // $this->db->update('tbl_task');
+
             $this->SurveyAdmin_model->insert_riwayat($data_input1);
 
-            if ($this->SurveyAdmin_model->edit_verifpembayaran($data, $id) == TRUE) {
+            if ($this->SurveyAdmin_model->edit_verifpembayaran($data, $id_task) == TRUE) {
 
                 $this->session->set_flashdata('edit', true);
             } else {
@@ -82,8 +103,11 @@ class Verifikasi_ctrl extends CI_Controller
                 $this->session->set_flashdata('edit', false);
             }
         } else {
-            if ($this->SurveyAdmin_model->edit_verifpembayaran($data, $id) == TRUE) {
+            $this->db->set('nominal_saldo', $saldo_adm + 2500);
+            $this->db->where('id_usr', $id_admin);
+            $this->db->update('tbl_saldo');
 
+            if ($this->SurveyAdmin_model->edit_verifpembayaran($data, $id_task) == TRUE) {
                 $this->session->set_flashdata('edit', true);
             } else {
 
@@ -92,14 +116,8 @@ class Verifikasi_ctrl extends CI_Controller
         }
 
         // var_dump($data);
-
         $byr = $this->SurveyAdmin_model->select_srvy();
-
-        $data = array('byr' => $byr,);
-        $dataa = array(
-            'title'  => 'GoSurvey/Verif Pembayaran - Admin',
-            'user'   => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
-        );
+        $data = array('byr' => $byr);
 
         $this->load->view('Admin/UI/Header', $dataa);
         $this->load->view('Admin/verifikasi/Verif_pembayaran', $data);

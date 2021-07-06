@@ -23,7 +23,7 @@
                                             <div class="col-lg-6 error-page-divider text-lg-left pl-lg-4">
                                                 <h2>Survey</h2>
                                                 <h3 class="font-weight-light">Anda Berhasil Di Akhiri</h3>
-                                                <h3 class="font-weight-light">Anda Memiliki sisa saldo <b> Rp. <?= number_format($srvy['total_nominal'], 2, ',', '.'); ?></b> </h3>
+                                                <h3 class="font-weight-light">Anda Memiliki sisa saldo <b> Rp. <?= number_format($srvy['total_nominal'] - 2500, 2, ',', '.'); ?></b> </h3>
                                                 <h3 class="font-weight-light">Akan dikembalikan ke Saldo Dompet anda selama 1-3 hari jam kerja </h3>
                                             </div>
                                         </div>

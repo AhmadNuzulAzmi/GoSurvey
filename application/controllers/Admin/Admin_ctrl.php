@@ -23,6 +23,7 @@ class Admin_ctrl extends CI_Controller
 
 		$data = array(
 			'jml_user' => $this->SurveyAdmin_model->jml_user($dataa['user']['id_usr']),
+			'dompet' => $this->SurveyAdmin_model->saldo($dataa['user']['id_usr']),
 			'jml_task' => $this->SurveyAdmin_model->jml_task(),
 			'jml_taskdone' => $this->SurveyAdmin_model->jml_taskdone()
 		);

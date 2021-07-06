@@ -9,6 +9,7 @@ class Mysurvey_ctrl extends CI_Controller
         parent::__construct();
         $this->load->library('form_validation');
         $this->load->model('SurveyMember_model');
+        $this->load->model('Task_model');
         if (!$this->session->userdata('email')) {
             redirect('Login/Auth');
         }
@@ -70,12 +71,24 @@ class Mysurvey_ctrl extends CI_Controller
 
         $data['id_task'] = $id;
 
+        $total_nom = $this->Task_model->select_nominaltask($id);
+        foreach ($total_nom as $ttl) {
+            $total =  $ttl->total_nominal;
+        }
+
+        // var_dump($ttl);
+        // die;
+
         $srvy = $this->SurveyMember_model->survey_byidtask($id);
         $data = array('srvy' => $srvy);
 
         $nominal = 0;
 
         $this->db->set('jmlrespon_task', $nominal);
+        $this->db->where('id_task', $id);
+        $this->db->update('tbl_task');
+
+        $this->db->set('total_nominal', $total - 2500);
         $this->db->where('id_task', $id);
         $this->db->update('tbl_task');
 

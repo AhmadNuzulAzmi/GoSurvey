@@ -18,7 +18,7 @@
             $hsl = false;
           }
         }
-        if ($hsl == true) { ?>
+        if ($hsl) { ?>
           <div class="row">
             <div class="col-md-12 stretch-card grid-margin">
               <div class="card bg-gradient-info card-img-holder text-white">
@@ -27,9 +27,12 @@
                   </h3>
                   <h5 class="font-weight-normal mb-3"><?php echo $value->desk_task ?></h5>
                   <?php
-                  if ($value->total_nominal != 0) { ?>
+                  if ($value->total_nominal != 0 and $value->jmlrespon_task != 0) { ?>
+                    <h4 class="mb-4">Rp. <?= number_format($value->total_nominal - 2500, 2, ',', '.') ?></h4>
+                  <?php } elseif ($value->total_nominal) { ?>
                     <h4 class="mb-4">Rp. <?= number_format($value->total_nominal, 2, ',', '.') ?></h4>
                   <?php } else { ?>
+
                   <?php } ?>
                   <p class="mb-4">Author <?php echo $value->nama_usr ?></p>
                   <a class="btn btn-success btn-rounded btn-fw" href="<?= site_url('/Member/Mysurvey_ctrl/tampil_jwbsurvey/' . $value->id_task); ?>">Lihat Jawaban</a>

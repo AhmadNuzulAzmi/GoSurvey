@@ -38,7 +38,7 @@
                     <tr>
                       <td><?php echo $key + 1 ?></td>
                       <td><?php echo $value->judul_task ?></td>
-                      <td>Rp. <?php echo  number_format($value->total_nominal, 2, ',', '.'); ?></td>
+                      <td>Rp. <?php echo  number_format($value->total_nominal - 2500, 2, ',', '.'); ?></td>
                       <td> <?php echo $value->pembayaran ?> </td>
                       <?php
                       if ($value->pembayaran == "Saldo") { ?>

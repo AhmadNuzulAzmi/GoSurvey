@@ -104,4 +104,10 @@ class SurveyAdmin_model extends CI_Model
     {
         $this->db->insert('tbl_riwayat', $data);
     }
+
+    public function saldo($id_user)
+    {
+        return $this->db->query('select sum(nominal_saldo) as nominal_saldo from tbl_saldo a, tbl_user b where a.id_usr = b.id_usr and a.id_usr ="' . $id_user . '"
+        ')->row_array();
+    }
 }

@@ -10,6 +10,7 @@ class SoalSurvey_ctrl extends CI_Controller
         $this->load->library('form_validation');
         $this->load->model('SurveyMember_model');
         $this->load->model('Dompet_model');
+        $this->load->model('Pgn_model');
         if (!$this->session->userdata('email')) {
             redirect('Login/Auth');
         }
@@ -87,7 +88,7 @@ class SoalSurvey_ctrl extends CI_Controller
             'judul_task' => $this->SurveyMember_model->task_byidtask($id)
         );
 
-        // var_dump($data);
+        // var_dump($dataa);
 
         // die;
 
@@ -189,11 +190,26 @@ class SoalSurvey_ctrl extends CI_Controller
             'id'            => $kode,
             'id_usr'        => $id_user,
             'transaksi'     => $trans,
-            'nominal_trans' => $uang,
+            'nominal_trans' => $uang - 250,
             'wkt_trans'     => time(),
             'bukti'         => $bukti,
             'status'        => $status
         );
+
+        $admin = $this->Pgn_model->user_saldo();
+        foreach ($admin as $ad) {
+            $kd_adm = $ad->kd_saldo;
+            $saldo_adm =  $ad->nominal_saldo;
+        }
+        // var_dump($admin);
+        // var_dump($kd_adm);
+        // var_dump($saldo_adm);
+        // die;
+
+
+        $this->db->set('nominal_saldo', $saldo_adm + 250);
+        $this->db->where('kd_saldo', $kd_adm);
+        $this->db->update('tbl_saldo');
 
         $sql = "INSERT INTO `tbl_jawaban` (`id_usr`, `id_task`, `jawaban`, `nominal`) VALUES ($id_user, $id_taskk, '$save', $uang )";
         $this->db->query($sql);

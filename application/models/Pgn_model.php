@@ -103,4 +103,9 @@ class Pgn_model extends CI_Model
 	{
 		$this->db->insert('tbl_saldo', $data);
 	}
+
+	public function user_saldo()
+	{
+		return $this->db->query('select a.kd_saldo, a.nominal_saldo from tbl_saldo a, tbl_user b where a.id_usr = b.id_usr and b.role_id = 1')->result();
+	}
 }

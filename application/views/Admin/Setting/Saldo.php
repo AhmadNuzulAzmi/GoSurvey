@@ -47,7 +47,14 @@
                                     <td><?php echo $value->nama_bank ?></td>
                                     <td><?php echo $value->atas_nama ?></td>
                                     <td><?php echo $value->nomor_bank ?></td>
-                                    <td>
+                                    <td onclick="Swal.fire({
+                                                    title: '',
+                                                    text: 'Logo Bank',
+                                                    imageUrl: '<?= base_url('assets/gambar/logo/') . $value->logo_bank ?>',
+                                                    imageWidth: 400,
+                                                    imageHeight: 400,
+                                                    imageAlt: 'Custom image',
+                                                    })">
                                         <img src="<?= base_url('assets/gambar/logo/') . $value->logo_bank ?>" />
                                     </td>
 

@@ -39,12 +39,14 @@
             </h4>
             <?php
             $a = 0;
+
             // $b = 0;
             foreach ($profil as $prof) {
               $id_prof = $prof->id_usr;
 
               if ($id_prof == null) {
-                echo "Profil Kosong";
+                echo "Profil Kosong"; ?>
+              <?php
               } else { ?>
                 <?php
                 foreach ($srvy as $key => $value) {
@@ -83,7 +85,6 @@
                     }
                   }
                 } ?>
-
                 <h2 class="mb-5"><?= $a ?> </h2>
             <?php
               }

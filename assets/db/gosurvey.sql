@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Jun 2021 pada 10.42
+-- Waktu pembuatan: 08 Jul 2021 pada 11.15
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.11
 
@@ -90359,8 +90359,8 @@ CREATE TABLE `tbl_bank` (
 
 INSERT INTO `tbl_bank` (`no_bank`, `logo_bank`, `nama_bank`, `nomor_bank`, `atas_nama`) VALUES
 (1, 'bri.png', 'Bank BRI', 1234657890, 'M Fauzan Delvani'),
-(2, 'java.png', 'Bank BNI  ', 987654321, 'M Fauzan Delvani  '),
-(4, 'bkt1.JPG', 'Bank Mandiri   ', 2147483647, 'A. Nuzul Azmi');
+(2, 'bni.png', 'Bank BNI   ', 987654321, 'M Fauzan Delvani   '),
+(4, 'mandiri.jpg', 'Bank Mandiri      ', 2147483647, 'A. Nuzul Azmi   ');
 
 -- --------------------------------------------------------
 
@@ -90384,7 +90384,7 @@ CREATE TABLE `tbl_filter` (
 --
 
 INSERT INTO `tbl_filter` (`id`, `id_usr`, `id_task`, `jenkel`, `pekerjaan`, `penghasilan`, `gol_darah`, `merokok`) VALUES
-(9, 79, 31, 'x,Pria,Wanita', 'Mahasiswa', 1, 'x,A,B,AB', 'x,Ya,Tidak');
+(11, 88, 56, 'x,Pria', 'Mahasiswa', 1, 'x,A,B,AB,O', 'x,Ya,Tidak');
 
 -- --------------------------------------------------------
 
@@ -90427,18 +90427,17 @@ CREATE TABLE `tbl_jawaban` (
 --
 
 INSERT INTO `tbl_jawaban` (`id_jwb`, `id_usr`, `id_task`, `jawaban`, `nominal`) VALUES
-(21, 82, 29, '[{\"id_soal\":\"44\",\"type_soal\":\"Radio\",\"answer\":\"Web\"},{\"id_soal\":\"45\",\"type_soal\":\"Text\",\"answer\":\"rancang bangun sistem sekolah\"},{\"id_soal\":\"46\",\"type_soal\":\"Checkbox\",\"answer\":[\"Bu Rika\", \"Pak Mahrus\"]},{\"id_soal\":\"47\",\"type_soal\":\"Textarea\",\"answer\":\"Pusing\"}]', 2000),
-(22, 81, 29, '[{\"id_soal\":\"44\",\"type_soal\":\"Radio\",\"answer\":\"Android\"},{\"id_soal\":\"45\",\"type_soal\":\"Text\",\"answer\":\"Aplikasi deteksi\"},{\"id_soal\":\"46\",\"type_soal\":\"Checkbox\",\"answer\":[\"Bu Juni\", \"Pak Maksum\"]},{\"id_soal\":\"47\",\"type_soal\":\"Textarea\",\"answer\":\"sangat sulit untuk memikirkan judul apa yang tepat untu saya\"}]', 2000),
-(23, 79, 30, '[{\"id_soal\":\"48\",\"type_soal\":\"Radio\",\"answer\":\"Doritos\"},{\"id_soal\":\"49\",\"type_soal\":\"Checkbox\",\"answer\":[\"Di Warung\", \"Alfamart\"]},{\"id_soal\":\"50\",\"type_soal\":\"Text\",\"answer\":\"Adik\"},{\"id_soal\":\"51\",\"type_soal\":\"Textarea\",\"answer\":\"Enak apalagi kalau banyak micin nya\"}]', 8023),
-(24, 81, 30, '[{\"id_soal\":\"48\",\"type_soal\":\"Radio\",\"answer\":\"Doritos\"},{\"id_soal\":\"49\",\"type_soal\":\"Checkbox\",\"answer\":[\"Di Warung\", \"Alfamart\"]},{\"id_soal\":\"50\",\"type_soal\":\"Text\",\"answer\":\"adek\"},{\"id_soal\":\"51\",\"type_soal\":\"Textarea\",\"answer\":\"asd\"}]', 8023),
-(25, 81, 31, '[{\"id_soal\":\"52\",\"type_soal\":\"Text\",\"answer\":\"asd\"}]', 2000);
+(42, 79, 53, '[{\"id_soal\":\"94\",\"type_soal\":\"Text\",\"answer\":\"Abis mandi\"},{\"id_soal\":\"95\",\"type_soal\":\"Checkbox\",\"answer\":[\"Membaca\", \"Menulis\"]}]', 2000),
+(43, 81, 53, '[{\"id_soal\":\"94\",\"type_soal\":\"Text\",\"answer\":\"Abis mandi\"},{\"id_soal\":\"95\",\"type_soal\":\"Checkbox\",\"answer\":[\"Menghafal\"]}]', 2000),
+(44, 88, 55, '[{\"id_soal\":\"96\",\"type_soal\":\"Text\",\"answer\":\"Rancang bangun sistem kuesioner\"},{\"id_soal\":\"97\",\"type_soal\":\"Checkbox\",\"answer\":[\"Web\", \"Data\"]},{\"id_soal\":\"98\",\"type_soal\":\"Radio\",\"answer\":\"Bu Rika\"},{\"id_soal\":\"99\",\"type_soal\":\"Textarea\",\"answer\":\"Capek mikir\"}]', 2000),
+(45, 79, 56, '[{\"id_soal\":\"100\",\"type_soal\":\"Text\",\"answer\":\"Biore\"},{\"id_soal\":\"101\",\"type_soal\":\"Radio\",\"answer\":\"2 x\"},{\"id_soal\":\"102\",\"type_soal\":\"Checkbox\",\"answer\":[\"Pagi\", \"Siang\", \"Sore\"]},{\"id_soal\":\"103\",\"type_soal\":\"Textarea\",\"answer\":\"suka malas aja sih\"}]', 2000);
 
 --
 -- Trigger `tbl_jawaban`
 --
 DELIMITER $$
 CREATE TRIGGER `TGR_BONUS` AFTER INSERT ON `tbl_jawaban` FOR EACH ROW BEGIN
- UPDATE tbl_saldo SET nominal_saldo = nominal_saldo + NEW.nominal
+ UPDATE tbl_saldo SET nominal_saldo = nominal_saldo + NEW.nominal -	250
  WHERE id_usr=NEW.id_usr;
 END
 $$
@@ -90476,20 +90475,23 @@ CREATE TABLE `tbl_option_soal` (
 --
 
 INSERT INTO `tbl_option_soal` (`id_opt`, `id_task`, `id_soal`, `pilihan_opt`) VALUES
-(66, 29, 44, 'Web'),
-(67, 29, 44, 'Android'),
-(68, 29, 44, 'Jaringan'),
-(69, 29, 44, 'Animasi'),
-(70, 29, 46, 'Bu Rika'),
-(71, 29, 46, 'Bu Juni'),
-(72, 29, 46, 'Pak Maksum'),
-(73, 29, 46, 'Pak Mahrus'),
-(74, 30, 48, 'Doritos'),
-(75, 30, 48, 'Citato'),
-(76, 30, 48, 'Luys'),
-(77, 30, 49, 'Di Warung'),
-(78, 30, 49, 'Alfamart'),
-(79, 30, 49, 'Indomaret');
+(109, 53, 95, 'Membaca'),
+(110, 53, 95, 'Menulis'),
+(111, 53, 95, 'Menghafal'),
+(112, 55, 97, 'Animasi'),
+(113, 55, 97, 'Web'),
+(114, 55, 97, 'Jaringan'),
+(115, 55, 97, 'Data'),
+(116, 55, 98, 'Bu Rika'),
+(117, 55, 98, 'Bu Juni'),
+(118, 55, 98, 'Pak Agus'),
+(119, 56, 101, '1 x'),
+(120, 56, 101, '2 x'),
+(121, 56, 101, '3 x'),
+(122, 56, 102, 'Pagi'),
+(123, 56, 102, 'Siang'),
+(124, 56, 102, 'Sore'),
+(125, 56, 102, 'Malam');
 
 -- --------------------------------------------------------
 
@@ -90522,9 +90524,9 @@ CREATE TABLE `tbl_profil` (
 --
 
 INSERT INTO `tbl_profil` (`id`, `id_usr`, `jenkel`, `tgl_lahir`, `gol_darah`, `alamat`, `id_prov`, `id_kab`, `id_kec`, `id_kel`, `pekerjaan`, `jml_penghasilan`, `institusi`, `no_hp`, `instagram`, `merokok`, `gadget`) VALUES
-(1, 79, 'Pria', '2000-12-13', 'O', 'Jl. Intisari', '14', '1405', '140502', '1405021009', 'Mahasiswa', 1, 'Politeknik Caltex Riau', '085833110833', 'Azmi13', 'Tidak', 'Android,Laptop,Tablet'),
-(2, 82, 'Pria', '2021-06-17', 'O', 'Jl. Tobat', '51', '5171', '517103', '5171032003', 'Mahasiswa', 1, '', '082274351200', '', 'Ya', 'Android,Laptop'),
-(4, 81, 'Pria', '2021-07-01', 'A', 'Jl. Tobat', '14', '1410', '141003', '1410032014', 'Mahasiswa', 1, '', '085833110833', 'azmi', 'Tidak', 'Laptop,Imac');
+(8, 88, 'Pria', '2021-07-20', 'O', 'Jl. Intisari', '14', '1405', '140502', '1405021009', 'Mahasiswa', 1, '', '085833110833', 'ahmadnuzull_', 'Ya', 'Android,Laptop'),
+(9, 79, 'Pria', '2021-07-14', 'AB', 'Jl. Tobat', '13', '1304', '130405', '1304052002', 'Mahasiswa', 1, '', '085833110833', 'Azmi13', 'Ya', 'Android,Laptop,Tablet'),
+(10, 81, 'Pria', '0000-00-00', 'A', 'Jl. Tobat', '21', '2101', '210106', '2101061009', 'Mahasiswa', 1, '', '085833110833', 'azmi', 'Ya', 'Android,Laptop');
 
 -- --------------------------------------------------------
 
@@ -90548,17 +90550,15 @@ CREATE TABLE `tbl_riwayat` (
 --
 
 INSERT INTO `tbl_riwayat` (`id_rwyt`, `id`, `id_usr`, `transaksi`, `nominal_trans`, `wkt_trans`, `bukti`, `status`) VALUES
-(33, 4, 79, 'Topup', 99500, '1624969246', 'unnamed.png', 'Verified'),
-(34, 0, 79, 'Bayar Survey', 98000, '1624969522', '', 'Verified'),
-(35, 0, 82, 'Jawab Survey', 2000, '1624969944', '', 'Verified'),
-(36, 0, 81, 'Jawab Survey', 2000, '1624975026', '', 'Verified'),
-(39, 5, 81, 'Topup', 99500, '1624975658', 'selter.png', 'Verified'),
-(40, 0, 79, 'Jawab Survey', 8023, '1625029628', '', 'Verified'),
-(41, 6, 79, 'Topup', 99500, '1625037889', 'y.jpg', 'Verified'),
-(42, 0, 79, 'Bayar Survey', 20000, '1625038025', '', 'Verified'),
-(43, 0, 81, 'Jawab Survey', 8023, '1625038304', '', 'Verified'),
-(44, 0, 81, 'Jawab Survey', 2000, '1625038323', '', 'Verified'),
-(45, 0, 82, 'Return Dana', 152437, '1625038418', '', 'Verified');
+(82, 13, 88, 'Topup', 99500, '1625580319', 'teees.jpg', 'Verified'),
+(83, 8, 88, 'Tarik', 50000, '1625580545', 'buktitf2.jpg', 'Verified'),
+(84, 0, 88, 'Bayar Survey', 22500, '1625580629', '', 'Verified'),
+(85, 0, 79, 'Jawab Survey', 1750, '1625580963', '', 'Verified'),
+(86, 0, 81, 'Jawab Survey', 1750, '1625586539', '', 'Verified'),
+(87, 0, 88, 'Return Dana', 16000, '1625597537', '', 'Verified'),
+(88, 0, 88, 'Jawab Survey', 1750, '1625598577', '', 'Verified'),
+(89, 0, 88, 'Bayar Survey', 22500, '1625729470', '', 'Verified'),
+(90, 0, 79, 'Jawab Survey', 1750, '1625729728', '', 'Verified');
 
 -- --------------------------------------------------------
 
@@ -90577,10 +90577,10 @@ CREATE TABLE `tbl_saldo` (
 --
 
 INSERT INTO `tbl_saldo` (`kd_saldo`, `id_usr`, `nominal_saldo`) VALUES
-(26, 79, 89023),
-(27, 80, 0),
-(28, 81, 111523),
-(29, 82, 154437);
+(26, 79, 3500),
+(27, 80, 8500),
+(28, 81, 1750),
+(32, 88, 22250);
 
 -- --------------------------------------------------------
 
@@ -90600,15 +90600,16 @@ CREATE TABLE `tbl_soal` (
 --
 
 INSERT INTO `tbl_soal` (`id_soal`, `id_task`, `soal`, `type_soal`) VALUES
-(44, 29, 'Bidang apa yang akan kamu ambil ?', 'Radio'),
-(45, 29, 'Apa judul PA yang akan kamu ajukan ?', 'Text'),
-(46, 29, 'Pilih 2 dosen pembimbing mu !', 'Checkbox'),
-(47, 29, 'Sebutkan kendala yg kamu dapatkan saat pengajuan judu ', 'Textarea'),
-(48, 30, 'Jajan apa yang paling enak', 'Radio'),
-(49, 30, 'Dimana sering jajan ?', 'Checkbox'),
-(50, 30, 'Siapa yang sering dijajanin', 'Text'),
-(51, 30, 'Pendapat anda tentang jajan ?', 'Textarea'),
-(52, 31, 'a', 'Text');
+(94, 53, 'Kapan anak suka belajar ?', 'Text'),
+(95, 53, 'Apa yang sering dipelajari anak ?', 'Checkbox'),
+(96, 55, 'Judul apa yang ingin kamu ambil ?', 'Text'),
+(97, 55, 'Tentang apa yang kamu tertarik', 'Checkbox'),
+(98, 55, 'Siapa dosen pembimbing yang akan kamu ajukan ?', 'Radio'),
+(99, 55, 'Sebutkan kendala selama ini ?', 'Textarea'),
+(100, 56, 'Sabun mandi apa yang digunakan ?', 'Text'),
+(101, 56, 'Berapa kali makan dalam sehari ?', 'Radio'),
+(102, 56, 'Kapan waktu push up dalam sehari ?', 'Checkbox'),
+(103, 56, 'Sebutkan kendala setiap melakukan olahraga ?', 'Textarea');
 
 -- --------------------------------------------------------
 
@@ -90628,6 +90629,13 @@ CREATE TABLE `tbl_tarik` (
   `bukti` varchar(256) NOT NULL,
   `status` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_tarik`
+--
+
+INSERT INTO `tbl_tarik` (`id`, `id_usr`, `tgl_tarik`, `jml_tarik`, `transaksi`, `pembayaran`, `no_rek`, `ats_nama`, `bukti`, `status`) VALUES
+(8, 88, '1625580545', 50000, 'Tarik', 'Bank BNI', '1234657890', 'Azhar', 'buktitf2.jpg', 'Verified');
 
 --
 -- Trigger `tbl_tarik`
@@ -90665,10 +90673,9 @@ CREATE TABLE `tbl_task` (
 --
 
 INSERT INTO `tbl_task` (`id_task`, `id_usr`, `judul_task`, `desk_task`, `jmlrespon_task`, `nominal_task`, `total_nominal`, `filter`, `bukti`, `pembayaran`, `status`) VALUES
-(29, 79, 'Survey Judul PA', 'Proyek Akhir', 47, 2000, 94000, 'tidak', '', 'Saldo', 'verified'),
-(30, 82, 'Survey Jajanan Ringan', 'jajan', 0, 8023, 0, 'tidak', 'y.jpg', 'Transfer Bank BNI', 'verified'),
-(31, 79, 'Tes Filter', 'tes', 9, 2000, 18000, 'ya', '', 'Saldo', 'verified'),
-(32, 79, 'asd', 'asd', 10, 2000, 20000, 'tidak', 'y.jpg', 'Transfer Bank BRI', 'unverified');
+(53, 88, 'Survey kepuasan belajar anak', 'belajar', 0, 2000, 0, 'tidak', '', 'Saldo', 'verified'),
+(55, 79, 'Survey Judul PA', 'Judul PA', 9, 2000, 20500, 'tidak', 'buktitf1.jpg', 'Transfer Bank Mandiri', 'verified'),
+(56, 88, 'Survey Pria keren', 'Cowo keren', 9, 2000, 20500, 'ya', '', 'Saldo', 'verified');
 
 -- --------------------------------------------------------
 
@@ -90691,9 +90698,7 @@ CREATE TABLE `tbl_topup` (
 --
 
 INSERT INTO `tbl_topup` (`id`, `id_usr`, `tgl_topup`, `jml_topup`, `bukti`, `transaksi`, `status`) VALUES
-(4, 79, '1624969246', 99500, 'unnamed.png', 'Topup', 'Verified'),
-(5, 81, '1624975658', 99500, 'selter.png', 'Topup', 'Verified'),
-(6, 79, '1625037889', 99500, 'y.jpg', 'Topup', 'Verified');
+(13, 88, '1625580319', 99500, 'teees.jpg', 'Topup', 'Verified');
 
 --
 -- Trigger `tbl_topup`
@@ -90731,8 +90736,7 @@ INSERT INTO `tbl_user` (`id_usr`, `nama_usr`, `email_usr`, `image_usr`, `passwor
 (79, 'Ahmad Nuzul Azmi', 'azmidbulls13@gmail.com', 'default.png', '$2y$10$rnE6vm/LxqxquVzsC1AH7.eqj5GF3sRMRkhCjokNgTFVPuJqGfVcy', 2, 1, 1623437026),
 (80, 'Admin', 'admin@gmail.com', 'default.png', '$2y$10$JifElxQS9fbqFOdaQ6RVCuN9mpyXHiGtVzN.xzQIarx7nVYs8EEXq', 1, 1, 1623437306),
 (81, 'M fauzan Delvani', 'lombavikre@gmail.com', 'default.png', '$2y$10$khbwbhGNFeVb0X0ydBJPT.cGqNZbt3b8CRXwQnRI2ye5H8MkHEVJW', 2, 1, 1623437789),
-(82, 'Azmi', 'ahmadnuzulazmi@gmail.com', 'default.png', '$2y$10$JVLlzjIsJHfkigG5uXc9Ge4Rta53EdZ3HFSbzfSGtfzPTJdKndWgK', 2, 1, 1623464516),
-(84, 'Azhar', 'azhar@gmail.com', 'default.png', '$2y$10$Oz.zVN8pdXTFmxWsk3GzG.JgYTq/TEjivAOqF9Ym7gamP2ndAZyJy', 2, 1, 1625037764);
+(88, 'Azmi', 'ahmadnuzulazmi@gmail.com', 'default.png', '$2y$10$7ByNfElv1meBKm7.4nNCquh/YjL74TL5kasM9PohVnaoy63/Rl7Jm', 2, 1, 1625463080);
 
 -- --------------------------------------------------------
 
@@ -90919,7 +90923,7 @@ ALTER TABLE `tbl_bank`
 -- AUTO_INCREMENT untuk tabel `tbl_filter`
 --
 ALTER TABLE `tbl_filter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_harga_saldo`
@@ -90931,67 +90935,67 @@ ALTER TABLE `tbl_harga_saldo`
 -- AUTO_INCREMENT untuk tabel `tbl_jawaban`
 --
 ALTER TABLE `tbl_jawaban`
-  MODIFY `id_jwb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_jwb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_option_soal`
 --
 ALTER TABLE `tbl_option_soal`
-  MODIFY `id_opt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id_opt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_profil`
 --
 ALTER TABLE `tbl_profil`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_riwayat`
 --
 ALTER TABLE `tbl_riwayat`
-  MODIFY `id_rwyt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id_rwyt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_saldo`
 --
 ALTER TABLE `tbl_saldo`
-  MODIFY `kd_saldo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `kd_saldo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_soal`
 --
 ALTER TABLE `tbl_soal`
-  MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_tarik`
 --
 ALTER TABLE `tbl_tarik`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_task`
 --
 ALTER TABLE `tbl_task`
-  MODIFY `id_task` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_task` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_topup`
 --
 ALTER TABLE `tbl_topup`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id_usr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id_usr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_user_token`
 --
 ALTER TABLE `tbl_user_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_role`

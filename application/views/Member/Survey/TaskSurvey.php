@@ -83,10 +83,8 @@
                   <input type="file" name="image" class="custom-file-input" id="upload_filee">
                   <label class="custom-file-label" for="customFile">Upload Bukti Pembayaran</label>
                 </div>
-                <label class="mt-2" style="color: red;">Note : <br /><br />- Tidak perlu upload bukti pembayaran jika menggunakan metode pembayaran <b> Saldo Dompet</b></label>
-                <br />
-                <label class="mt-2,5" style="color: red;">
-                  - Bukti Pembayaran yang diupload <b>Wajib</b> dengan format: <b> jpg, dan png </b>
+                <label class="mt-2" style="color: red;">Note : <br /><br />Tidak perlu upload bukti pembayaran jika menggunakan metode pembayaran <b> Saldo Dompet</b></label>
+
 
               </div>
 

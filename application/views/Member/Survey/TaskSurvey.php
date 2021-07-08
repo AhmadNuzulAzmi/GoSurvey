@@ -32,20 +32,10 @@
               </div>
               <div class="form-group">
                 <label for="exampleTextarea1">Deskripsi</label>
-                <textarea class="form-control" id="desk_rwt" name="deskripsi" rows="4" required></textarea>
+                <textarea class="form-control" id="desk_rwt" name="deskripsi" rows="4" placeholder="Deskripsi Singkat" required></textarea>
               </div>
 
-              <div class="form-group">
-                <label>Pilih Pembayaran</label>
-                <select class="form-control form-control-sm" name="pembayaran" id="select_option" required>
-                  <option value="">-- Silahkan Pilih --</option>
-                  <?php foreach ($saldo as $key => $value) { ?>
-                    <option> <?php echo "Transfer " . $value->nama_bank ?></option>
-                  <?php } ?>
-                  <!-- <option value="Saldo" id="option_saldo"> Saldo Dompet </option> -->
-                </select>
-                <br />
-              </div>
+
 
               <div class="form-group">
                 <label for="nominal">Nominal Survey</label>
@@ -53,8 +43,6 @@
                 <!-- <p>Value: <span id="demo"></span></p> -->
                 Rp. <output id="demo"></output>
                 <input type="hidden" id="demo1" name="nominal">
-
-
                 </h6>
               </div>
 
@@ -63,7 +51,19 @@
                 <input type="range" min="10" max="200" value="10" name="jml_res" class="slider2" id="myRange2">
                 <!-- <p>Value: <span id="demo"></span></p> -->
                 <output id="demo2"></output>
-                Orang <br /><br />
+                Orang <br /><br /><br />
+
+                <div class="form-group">
+                  <label>Pilih Pembayaran</label>
+                  <select class="form-control form-control-sm" name="pembayaran" id="select_option" required>
+                    <option value="">-- Silahkan Pilih --</option>
+                    <?php foreach ($saldo as $key => $value) { ?>
+                      <option> <?php echo "Transfer " . $value->nama_bank ?></option>
+                    <?php } ?>
+                    <!-- <option value="Saldo" id="option_saldo"> Saldo Dompet </option> -->
+                  </select>
+                </div>
+
                 <!-- <button type="button" class="ml-2 btn-sm btn-info border" data-toggle="modal" data-target=".modal-filter">filter audience</button> -->
                 <div class="custom-control custom-radio custom-control-inline">
                   <input type="radio" name="filter" class="custom-control-input" id="tidak" value="tidak">
@@ -83,7 +83,11 @@
                   <input type="file" name="image" class="custom-file-input" id="upload_filee">
                   <label class="custom-file-label" for="customFile">Upload Bukti Pembayaran</label>
                 </div>
-                <label class="mt-2" style="color: red;">Note : <br /><br />Tidak perlu upload bukti pembayaran jika menggunakan metode pembayaran <b> Saldo Dompet</b></label>
+                <label class="mt-2" style="color: red;">Note : <br /><br />- Tidak perlu upload bukti pembayaran jika menggunakan metode pembayaran <b> Saldo Dompet</b></label>
+                <br />
+                <label class="mt-2,5" style="color: red;">
+                  - Bukti Pembayaran yang diupload <b>Wajib</b> dengan format: <b> jpg, dan png </b>
+
               </div>
 
               <button type="submit" class="btn btn-info">Submit</button>
@@ -102,24 +106,22 @@
             <br />
 
             <div class="form-group">
-              <h6 for="nominal">Nominal Survey :
+              <h6 for="nominal">Nominal Survey &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Rp.
 
                 <output style="font-size: 14px;" id="demoo"></output>
               </h6>
               <br />
-              <h6 for="nominal">Jumlah Responden :
-
-                <output style="font-size: 14px;" id="demoo1"></output>
+              <h6 for="nominal">Jumlah Responden &nbsp;&nbsp; :
+                <output style="font-size: 14px;" id="demoo1"></output> Orang
               </h6>
               <br />
-              <h6 for="nominal">Biaya Admin :
-                <output style="font-size: 14px;">2500</output>
+              <h6 for="nominal">Biaya Admin &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Rp.
+                <output style="font-size: 14px;" class="mb-2">2500</output>
               </h6>
-              <hr>
-              </br>
+              <hr class="mb-4">
 
               <div class="input-group col-xs-12">
-                <h6>Total Pembayaran:
+                <h6>Total Pembayaran &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
                   Rp.
                   <output style="font-size: 14px;" id="total" name="ttl_nominal"></output>
                   <input type="hidden" id="total2" name="ttl_nominal">
@@ -295,43 +297,6 @@
 
                 </div>
 
-                <!-- <div class="form-group">
-                  <label>Gadget yang anda miliki : </label>
-                  <br>
-                  <div class="custom-control custom-checkbox custom-control-inline">
-                    <input title="Gadget yang anda miliki" type="checkbox" name="device[]" class="custom-control-input input check" id="Android" value="Android">
-                    <label class="custom-control-label" for="Android">Android</label>
-                  </div>
-                  <div class="custom-control custom-checkbox custom-control-inline">
-                    <input title="Gadget yang anda miliki" type="checkbox" name="device[]" class="custom-control-input input check" id="Laptop" value="Laptop">
-                    <label class="custom-control-label" for="Laptop">Laptop</label>
-                  </div>
-                  <div class="custom-control custom-checkbox custom-control-inline">
-                    <input title="Gadget yang anda miliki" type="checkbox" name="device[]" class="custom-control-input input check" id="Tablet" value="Tablet">
-                    <label class="custom-control-label" for="Tablet">Tablet</label>
-                  </div>
-                  <div class="custom-control custom-checkbox custom-control-inline">
-                    <input title="Gadget yang anda miliki" type="checkbox" name="device[]" class="custom-control-input input check" id="Macbook" value="Macbook">
-                    <label class="custom-control-label" for="Macbook">Macbook</label>
-                  </div>
-                  <div class="custom-control custom-checkbox custom-control-inline">
-                    <input title="Gadget yang anda miliki" type="checkbox" name="device[]" class="custom-control-input input check" id="PC-Desktop" value="PC-Desktop">
-                    <label class="custom-control-label" for="PC-Desktop">PC-Desktop</label>
-                  </div>
-                  <div class="custom-control custom-checkbox custom-control-inline">
-                    <input title="Gadget yang anda miliki" type="checkbox" name="device[]" class="custom-control-input input check" id="Iphone" value="Iphone">
-                    <label class="custom-control-label" for="Iphone">Iphone</label>
-                  </div>
-                  <div class="custom-control custom-checkbox custom-control-inline">
-                    <input title="Gadget yang anda miliki" type="checkbox" name="device[]" class="custom-control-input input check" id="Ipad" value="Ipad">
-                    <label class="custom-control-label" for="Ipad">Ipad</label>
-                  </div>
-                  <div class="custom-control custom-checkbox custom-control-inline">
-                    <input title="Gadget yang anda miliki" type="checkbox" name="device[]" class="custom-control-input input check" id="Imac" value="Imac">
-                    <label class="custom-control-label" for="Imac">Imac</label>
-                  </div>
-
-                </div> -->
 
                 <div class="form-group form-inlne">
                   <label>Perokok : </label>

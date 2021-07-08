@@ -37,6 +37,7 @@ class Dompet_ctrl extends CI_Controller
 
     public function topup()
     {
+
         $data = array(
             'title'  => 'GoSurvey/Topup - Member',
             'user'   => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
@@ -51,18 +52,24 @@ class Dompet_ctrl extends CI_Controller
 
     public function isi_topup()
     {
+        $topup = $this->Dompet_model->select_topup();
+        $this->session->set_flashdata('flash', 'di topup');
         $data['user'] = $this->db->get_where('tbl_user', ['email_usr' =>
         $this->session->userdata('email')])->row_array();
 
         $config['upload_path']          = './assets/gambar/dompet';
-        $config['allowed_types']        = 'gif|jpg|png';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
         $config['overwrite']            = true;
+        $config['file_name']             = 'topup_' . $topup[0]->id + 1;
         $config['max_size']             = 1024;
+        $config['remove_spaces']             = FALSE;
 
         $this->load->library('upload', $config);
 
         if ($this->upload->do_upload('image')) {
-            $this->upload->data("file_name");
+            $gbr = $this->upload->data();
+        } else {
+            $this->session->set_flashdata('flash', $this->upload->display_errors());;
         }
 
 
@@ -76,10 +83,10 @@ class Dompet_ctrl extends CI_Controller
         $sts = "Unverified";
 
         $data_input = array(
-            'id_usr'    => $idusr,
+            'id_usr'    => $topup[0]->id_usr,
             'tgl_topup' => time(),
             'jml_topup' => $nom,
-            'bukti'     => $bkt,
+            'bukti'     => $gbr['file_name'],
             'transaksi' => $tran,
             'status'    => $sts
         );
@@ -89,12 +96,12 @@ class Dompet_ctrl extends CI_Controller
         $idtask = $this->Dompet_model->isi_topup($data_input);
 
         $data_input1 = array(
-            'id'            => $idtask,
+            'id'            => $topup[0]->id_usr,
             'id_usr'        => $idusr,
             'transaksi'     => $tran,
             'nominal_trans' => $nom,
             'wkt_trans'     => time(),
-            'bukti'         => $bkt,
+            'bukti'         => $gbr['file_name'],
             'status'        => $sts
         );
 

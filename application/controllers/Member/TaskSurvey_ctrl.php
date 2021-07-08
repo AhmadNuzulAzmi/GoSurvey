@@ -37,20 +37,25 @@ class TaskSurvey_ctrl extends CI_Controller
 
     public function create_survey()
     {
+        $bayar = $this->Task_model->select_bayar();
         $data['user'] = $this->db->get_where('tbl_user', ['email_usr' =>
         $this->session->userdata('email')])->row_array();
 
         $config['upload_path']          = './assets/gambar/pembayaran';
-        $config['allowed_types']        = 'gif|jpg|png';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
         $config['overwrite']            = true;
-        $config['max_size']             = 1024; // 1MB
+        $config['file_name']             = 'bayar_' . $bayar[0]->id_task + 1;
+        $config['max_size']             = 1024;
+        $config['remove_spaces']             = FALSE;
         // $config['max_width']            = 1024;
         // $config['max_height']           = 768;
 
         $this->load->library('upload', $config);
 
         if ($this->upload->do_upload('image')) {
-            $this->upload->data("file_name");
+            $gbr = $this->upload->data();
+        } else {
+            $this->session->set_flashdata('flash', $this->upload->display_errors());;
         }
 
         $idusr  = $this->input->post("id_usr");
@@ -71,7 +76,7 @@ class TaskSurvey_ctrl extends CI_Controller
             'nominal_task'      => $nom,
             'filter'            => $filter,
             'total_nominal'     => $ttl,
-            'bukti'             => $img,
+            'bukti'             => $gbr['file_name'],
             'pembayaran'        => $pbyr,
             'status'            => "unverified"
         );

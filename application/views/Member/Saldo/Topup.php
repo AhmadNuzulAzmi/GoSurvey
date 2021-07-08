@@ -7,6 +7,7 @@ $jsArra = "var norek = new Array();\n";
 ?>
 
 <!-- partial -->
+
 <div class="main-panel">
     <div class="content-wrapper">
         <h3 class="page-title">
@@ -80,6 +81,7 @@ $jsArra = "var norek = new Array();\n";
                             </div>
                         </div>
                         <div class="template-demo">
+
                             <!-- <a class="btn btn-inverse-info btn-fw" href="<?= site_url('/Member/Dompet_ctrl/isi_topup'); ?>">Top Up</a> -->
                             <button type="submit" class="btn btn-inverse-info btn-rounded btn-fw">Top Up</button>
                         </div>

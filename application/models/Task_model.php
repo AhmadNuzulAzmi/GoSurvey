@@ -19,6 +19,11 @@ class Task_model extends CI_Model
 		return  $insert_id;
 	}
 
+	public function select_bayar()
+	{
+		return $this->db->order_by('id_task', 'DESC')->get('tbl_task')->result();
+	}
+
 	public function get_by_id($id)
 	{
 		$this->db->where('id_task', $id);

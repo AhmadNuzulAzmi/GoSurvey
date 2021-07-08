@@ -67,7 +67,7 @@ class Pgn_model extends CI_Model
 
 	public function select_bank()
 	{
-		return $this->db->get('tbl_bank')->result();
+		return $this->db->order_by('no_bank', 'DESC')->get('tbl_bank')->result();
 	}
 	public function select_harga()
 	{

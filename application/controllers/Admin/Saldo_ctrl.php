@@ -30,24 +30,33 @@ class Saldo_ctrl extends CI_Controller
 
     public function register_bank()
     {
-
+        $saldo = $this->Pgn_model->select_bank();
+        // var_dump($saldo[0]->no_bank);
+        // die();
 
         $this->session->set_flashdata('flash', 'di tambah');
         $config['upload_path']          = './assets/gambar/logo';
-        $config['allowed_types']        = 'gif|jpg|png';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
         $config['overwrite']            = true;
-        $config['max_size']             = 1024; // 1MB
+        $config['file_name']             = 'logo_' . $saldo[0]->no_bank + 1;
+        $config['max_size']             = 1024;
+        $config['remove_spaces']             = FALSE;
         // $config['max_width']            = 1024;
         // $config['max_height']           = 768;
+        // $config['encrypt_name']            = TRUE;
+
 
         $this->load->library('upload', $config);
 
         if ($this->upload->do_upload('image')) {
-            $this->upload->data("file_name");
+            $gbr = $this->upload->data();
+        } else {
+            $this->session->set_flashdata('flash', $this->upload->display_errors());;
         }
 
         $data = [
-            'logo_bank' => $_FILES['image']['name'],
+            'no_bank' => $saldo[0]->no_bank + 1,
+            'logo_bank' => $gbr['file_name'],
             'nama_bank' => $this->input->post('NamaBank'),
             'nomor_bank' => $this->input->post('NomorBank'),
             'atas_nama' => $this->input->post('ats_nama')
@@ -91,23 +100,29 @@ class Saldo_ctrl extends CI_Controller
     public function editaction2()
     {
 
+        $saldo = $this->Pgn_model->select_bank();
+        // var_dump($saldo[0]->no_bank);
+        // die();
+
         $this->session->set_flashdata('flash', 'di edit');
         $config['upload_path']          = './assets/gambar/logo';
-        $config['allowed_types']        = 'gif|jpg|png';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
         $config['overwrite']            = true;
+        $config['file_name']             = 'logo_' . $saldo[0]->no_bank + 1;
         $config['max_size']             = 1024;
+        $config['remove_spaces']             = FALSE;
 
         $this->load->library('upload', $config);
 
         if ($this->upload->do_upload('image')) {
-            $this->upload->data("file_name");
+            $gbr = $this->upload->data();
         }
 
         $id = $this->input->post('id');
         $data = [
 
-            'no_bank' => $this->input->post('id'),
-            'logo_bank' => $_FILES['image']['name'],
+            'no_bank' => $saldo[0]->no_bank + 1,
+            'logo_bank' => $gbr['file_name'],
             'nama_bank' => $this->input->post('nama'),
             'nomor_bank' => $this->input->post('nomor'),
             'atas_nama' => $this->input->post('ats_nama')

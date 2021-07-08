@@ -16,6 +16,10 @@ class Dompet_model extends CI_Model
         return $this->db->query('select sum(nominal_saldo) as nominal_saldo from tbl_saldo a, tbl_user b where a.id_usr = b.id_usr and a.id_usr ="' . $id_user . '"
         ')->row_array();
     }
+    public function select_topup()
+    {
+        return $this->db->order_by('id', 'DESC')->get('tbl_topup')->result();
+    }
 
     public function isi_topup($data)
     {

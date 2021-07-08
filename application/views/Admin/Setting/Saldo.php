@@ -27,27 +27,27 @@
                     <a href="#" data-target="#exampleModal2" class="edit" data-toggle="modal" data-id=""><label class="btn btn-info">Tambah</label></a>
                     </br>
 
+                    <form method="post" enctype="multipart/form-data">
+                        <table class="table table-bordered" id="data_tables">
+                            <thead style="text-align: center;">
+                                <tr class="table-active">
+                                    <th> No </th>
+                                    <th> Nama Bank </th>
+                                    <th> Nomor Rekening </th>
+                                    <th> Atas Nama </th>
+                                    <th> Logo </th>
+                                    <th> Action </th>
+                                </tr>
+                            </thead>
 
-                    <table class="table table-bordered" id="data_tables">
-                        <thead style="text-align: center;">
-                            <tr class="table-active">
-                                <th> No </th>
-                                <th> Nama Bank </th>
-                                <th> Nomor Rekening </th>
-                                <th> Atas Nama </th>
-                                <th> Logo </th>
-                                <th> Action </th>
-                            </tr>
-                        </thead>
-
-                        <tbody align="center">
-                            <?php foreach ($saldo as $key => $value) { ?>
-                                <tr>
-                                    <td><?php echo $key + 1 ?></td>
-                                    <td><?php echo $value->nama_bank ?></td>
-                                    <td><?php echo $value->atas_nama ?></td>
-                                    <td><?php echo $value->nomor_bank ?></td>
-                                    <td onclick="Swal.fire({
+                            <tbody align="center">
+                                <?php foreach ($saldo as $key => $value) { ?>
+                                    <tr>
+                                        <td><?php echo $key + 1 ?></td>
+                                        <td><?php echo $value->nama_bank ?></td>
+                                        <td><?php echo $value->nomor_bank ?></td>
+                                        <td><?php echo $value->atas_nama ?></td>
+                                        <td onclick="Swal.fire({
                                                     title: '',
                                                     text: 'Logo Bank',
                                                     imageUrl: '<?= base_url('assets/gambar/logo/') . $value->logo_bank ?>',
@@ -55,14 +55,14 @@
                                                     imageHeight: 400,
                                                     imageAlt: 'Custom image',
                                                     })">
-                                        <img src="<?= base_url('assets/gambar/logo/') . $value->logo_bank ?>" />
-                                    </td>
+                                            <img src="<?= base_url('assets/gambar/logo/') . $value->logo_bank ?>" />
+                                        </td>
 
-                                    <td>
-                                        <a href="#" data-target="#exampleModal" class="edit" data-toggle="modal" data-id="<?php echo $value->no_bank; ?> 
+                                        <td>
+                                            <a href="#" data-target="#exampleModal" class="edit" data-toggle="modal" data-id="<?php echo $value->no_bank; ?> 
                                         " data-logo="<?php echo $value->logo_bank; ?> " data-nama="<?php echo $value->nama_bank; ?> " data-nomor="<?php echo $value->nomor_bank; ?> " data-pemilik="<?php echo $value->atas_nama; ?> "><label class=" badge badge-info">Edit</label></a>
-                                        <!-- Modal -->
-                                        </ </div>
+                                            <!-- Modal -->
+                                            </ </div>
                 </div>
 
 
@@ -73,6 +73,7 @@
                 </tr>
             <?php } ?>
             </table>
+            </form>
 
             <form method="POST" action="<?= base_url('Admin/Saldo_ctrl/editaction2'); ?>" enctype="multipart/form-data">
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -29,7 +29,7 @@ class Verifikasi_ctrl extends CI_Controller
         );
 
         $this->load->view('Admin/UI/Header', $dataa);
-        $this->load->view('Admin/verifikasi/Verif_pembayaran', $data);
+        $this->load->view('Admin/Verifikasi/Verif_pembayaran', $data);
         $this->load->view('Admin/UI/Footer');
     }
 
@@ -120,7 +120,7 @@ class Verifikasi_ctrl extends CI_Controller
         $data = array('byr' => $byr);
 
         $this->load->view('Admin/UI/Header', $dataa);
-        $this->load->view('Admin/verifikasi/Verif_pembayaran', $data);
+        $this->load->view('Admin/Verifikasi/Verif_pembayaran', $data);
         $this->load->view('Admin/UI/Footer');
     }
 
@@ -135,7 +135,7 @@ class Verifikasi_ctrl extends CI_Controller
         );
 
         $this->load->view('Admin/UI/Header', $dataa);
-        $this->load->view('Admin/verifikasi/Verif_topup', $data);
+        $this->load->view('Admin/Verifikasi/Verif_topup', $data);
         $this->load->view('Admin/UI/Footer');
     }
 
@@ -175,7 +175,7 @@ class Verifikasi_ctrl extends CI_Controller
         );
 
         $this->load->view('Admin/UI/Header', $dataa);
-        $this->load->view('Admin/verifikasi/Verif_topup', $data);
+        $this->load->view('Admin/Verifikasi/Verif_topup', $data);
         $this->load->view('Admin/UI/Footer');
     }
 
@@ -190,7 +190,7 @@ class Verifikasi_ctrl extends CI_Controller
         );
 
         $this->load->view('Admin/UI/Header', $dataa);
-        $this->load->view('Admin/verifikasi/Verif_tarik', $data);
+        $this->load->view('Admin/Verifikasi/Verif_tarik', $data);
         $this->load->view('Admin/UI/Footer');
     }
 
@@ -246,7 +246,7 @@ class Verifikasi_ctrl extends CI_Controller
         );
 
         $this->load->view('Admin/UI/Header', $dataa);
-        $this->load->view('Admin/verifikasi/Verif_tarik', $data);
+        $this->load->view('Admin/Verifikasi/Verif_tarik', $data);
         $this->load->view('Admin/UI/Footer');
 
         // var_dump($id);
@@ -268,7 +268,7 @@ class Verifikasi_ctrl extends CI_Controller
         );
 
         $this->load->view('Admin/UI/Header', $dataa);
-        $this->load->view('Admin/verifikasi/Verif_return', $data);
+        $this->load->view('Admin/Verifikasi/Verif_return', $data);
         $this->load->view('Admin/UI/Footer');
     }
 
@@ -322,7 +322,7 @@ class Verifikasi_ctrl extends CI_Controller
         );
 
         $this->load->view('Admin/UI/Header', $dataa);
-        $this->load->view('Admin/verifikasi/Verif_return', $data);
+        $this->load->view('Admin/Verifikasi/Verif_return', $data);
         $this->load->view('Admin/UI/Footer');
     }
 }

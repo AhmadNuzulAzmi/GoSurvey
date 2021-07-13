@@ -50,7 +50,7 @@
                                 </div>
 
                             </form>
-                            <div class="text-center mt-4 font-weight-light"><a href="<?= base_url('login/auth'); ?>">Kembali Login </a>
+                            <div class="text-center mt-4 font-weight-light"><a href="<?= base_url('Login/Auth'); ?>">Kembali Login </a>
                             </div>
 
                         </div>

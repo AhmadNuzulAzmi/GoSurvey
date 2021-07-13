@@ -125,9 +125,11 @@
         <div class="row gx-0">
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div class="content">
-              <h2 class="lower">Siapa Kita (?)</h2>
-              <p class="tekswarna">Survei adalah pemeriksaan atau penelitian secara komprehensif. Survei yang dilakukan dalam melakukan penelitian itu biasa dilakukan dengan menyebarkan kuesioner atau wawancara, dengan tujuan untuk mengetahui: siapa mereka, apa yang mereka pikir, rasakan, atau kecenderungan suatu tindakan.</p>
-              <p class="p">GoSurvey merupakan platform yang membantu anda untuk mendapatkan respon dari pengguna (user). Kamu juga dapat menambah tahap dengan bergabung sebagai responden dan tahapan dari survey apa yang kamu isi.</p>
+              <h2>Apa itu Survey (?)</h2>
+              <p class="tekswarna">Survey adalah pemeriksaan atau penelitian secara komprehensif. Survey yang dilakukan dalam melakukan penelitian itu biasa dilakukan dengan menyebarkan kuesioner atau wawancara, dengan tujuan untuk mengetahui Siapa mereka, Apa yang mereka Pikir, Rasakan, atau Kecenderungan suatu tindakan.</p>
+              <br />
+              <h2>Apa itu GoSurvey (?)</h2>
+              <p class="tekswarna">GoSurvey merupakan platform yang membantu anda untuk mendapatkan respon dari pengguna (user). Kamu juga dapat menambah tahap dengan bergabung sebagai responden dan tahapan dari survey apa yang kamu isi.</p>
             </div>
           </div>
           <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
@@ -245,7 +247,7 @@
                 <p>Jadilah pengguna (respondend) dan hasilkan penghasilan dari mengisi survey</p>
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-check2"></i>
-                  <h4>Mendaftarkan diri sebagai user Respondend</h4>
+                  <h4>Mendaftarkan diri sebagai user</h4>
                 </div>
 
                 <div class="d-flex align-items-center mb-2">
@@ -255,12 +257,12 @@
 
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-check2"></i>
-                  <h4>Anda dapat mengisi survey yang tersedia (Active Survey)</h4>
+                  <h4>Anda dapat mengisi survey yang tersedia (Survey Aktif)</h4>
                 </div>
 
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-check2"></i>
-                  <h4>Anda akan mendapatkan pembayaran sesuai dengan jumlah survey yang telah di isi</h4>
+                  <h4>Anda akan mendapatkan pembayaran sesuai dengan nominal yang tertera pada survey yang anda jawab</h4>
                 </div>
 
               </div>
@@ -295,7 +297,7 @@
                 <div class="col-md-6 icon-box" data-aos="fade-up">
                   <i class="ri-line-chart-line"></i>
                   <div>
-                    <h4>Mendaftarkan diri sebagai surveyor</h4>
+                    <h4>Mendaftarkan diri sebagai user</h4>
 
                   </div>
                 </div>
@@ -327,7 +329,7 @@
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                   <i class="ri-command-line"></i>
                   <div>
-                    <h4>Survey Aktif</h4>
+                    <h4>Survey yang anda buat dapat dilihat pada fitur My Survey</h4>
 
                   </div>
                 </div>
@@ -360,7 +362,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
-                    Apa itu GoSurvey?
+                    Apa itu GoSurvey ?
                   </button>
                 </h2>
                 <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
@@ -373,7 +375,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
-                    Bagaimana cara menggunakan GoSurvey?
+                    Bagaimana cara menggunakan GoSurvey ?
                   </button>
                 </h2>
                 <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
@@ -386,7 +388,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
-                    Bagaimana saya dibayar?
+                    Bagaimana saya dibayar ?
                   </button>
                 </h2>
                 <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
@@ -407,7 +409,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1">
-                    Berapa lama waktu yang di perlukan untuk selesai?
+                    Berapa lama waktu yang di perlukan untuk selesai ?
                   </button>
                 </h2>
                 <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
@@ -420,7 +422,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2">
-                    Bagaimana cara melakukan pembayaran?
+                    Bagaimana cara melakukan pembayaran ?
                   </button>
                 </h2>
                 <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
@@ -433,7 +435,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-3">
-                    Saya sudah Top Up namun dana belum masuk ke akun?
+                    Saya sudah Top Up namun dana belum masuk ke akun ?
                   </button>
                 </h2>
                 <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
@@ -569,7 +571,7 @@
               </div>
               <div class="member-info">
                 <h4>Ahmad Nuzul Azmi</h4>
-                <span>Chief Executive Officer</span>
+                <span>Project Manager</span>
               </div>
             </div>
           </div>
@@ -581,7 +583,7 @@
               </div>
               <div class="member-info">
                 <h4>Azhar Maulana</h4>
-                <span>Product Manager</span>
+                <span>Team Project</span>
               </div>
             </div>
           </div>
@@ -593,7 +595,7 @@
               </div>
               <div class="member-info">
                 <h4>Gina Apriasiska</h4>
-                <span>Accountant</span>
+                <span>Team Project</span>
               </div>
             </div>
           </div>
@@ -605,7 +607,7 @@
               </div>
               <div class="member-info">
                 <h4>M. Fauzan Delfani</h4>
-                <span>CTO</span>
+                <span>Team Project</span>
               </div>
             </div>
           </div>

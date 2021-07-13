@@ -31,7 +31,7 @@ class SoalSurvey_ctrl extends CI_Controller
 
 
         $this->load->view('Member/UI/Header', $data);
-        $this->load->view('Member/Survey/soal_survey', $dataa);
+        $this->load->view('Member/Survey/Soal_survey', $dataa);
         $this->load->view('Member/UI/Footer');
     }
 
@@ -78,9 +78,9 @@ class SoalSurvey_ctrl extends CI_Controller
 
         $data['id_task'] = $id;
 
-        $soal = $this->SurveyMember_model->tampil_soal($id);
+        $soal     = $this->SurveyMember_model->tampil_soal($id);
         $soal_opt = $this->SurveyMember_model->soal_option($id);
-        $task = $this->SurveyMember_model->tampil_alltask();
+        $task     = $this->SurveyMember_model->tampil_alltask();
         $data = array(
             'soal' => $soal,
             'soal_opt' => $soal_opt,

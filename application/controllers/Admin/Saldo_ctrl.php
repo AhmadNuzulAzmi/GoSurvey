@@ -24,7 +24,7 @@ class Saldo_ctrl extends CI_Controller
         );
 
         $this->load->view('Admin/UI/Header', $dataa);
-        $this->load->view('Admin/Setting/saldo', $data);
+        $this->load->view('Admin/Setting/Saldo', $data);
         $this->load->view('Admin/UI/Footer');
     }
 
@@ -72,7 +72,7 @@ class Saldo_ctrl extends CI_Controller
         );
 
         $this->load->view('Admin/UI/Header', $dataa);
-        $this->load->view('Admin/Setting/saldo', $data);
+        $this->load->view('Admin/Setting/Saldo', $data);
         $this->load->view('Admin/UI/Footer');
     }
 
@@ -164,7 +164,7 @@ class Saldo_ctrl extends CI_Controller
         );
 
         $this->load->view('Admin/UI/Header', $dataa);
-        $this->load->view('Admin/Setting/saldo', $data);
+        $this->load->view('Admin/Setting/Saldo', $data);
         $this->load->view('Admin/UI/Footer');
     }
 }

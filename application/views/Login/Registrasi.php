@@ -64,9 +64,9 @@
                 </div>
               </form>
 
-              <div class="text-center mt-4 font-weight-light"> Sudah Punya Akun ? <a href="<?= base_url('login/auth'); ?>">Login</a>
+              <div class="text-center mt-4 font-weight-light"> Sudah Punya Akun ? <a href="<?= base_url('Login/Auth'); ?>">Login</a>
                 <br /><br />
-                Lupa Password ? <a href="<?= base_url('login/auth/forgotPassword'); ?>">Reset</a>
+                Lupa Password ? <a href="<?= base_url('Login/Auth/forgotPassword'); ?>">Reset</a>
               </div>
 
             </div>

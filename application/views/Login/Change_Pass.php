@@ -38,7 +38,7 @@
 
                             <?= $this->session->flashdata('message'); ?>
 
-                            <form class="pt-3" action="<?= base_url('login/auth/changePassword'); ?>" method="POST">
+                            <form class="pt-3" action="<?= base_url('Login/Auth/changePassword'); ?>" method="POST">
 
                                 <div class="form-group">
                                     <input type="password" name="password1" class="form-control form-control-lg" id="Password1" placeholder="Password Baru">

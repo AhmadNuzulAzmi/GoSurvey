@@ -63,7 +63,7 @@
               <a class="dropdown-item" href="<?= base_url('/Member/Password_ctrl'); ?>">
                 <i class="mdi mdi-key-variant mr-2 text-info"></i> Ganti Password </a>
 
-              <a class="dropdown-item" href="<?= base_url('login/auth/logout'); ?>">
+              <a class="dropdown-item" href="<?= base_url('Login/Auth/logout'); ?>">
                 <i class="mdi mdi-logout mr-2 text-info"></i> Logout </a>
             </div>
           </li>

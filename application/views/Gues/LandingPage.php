@@ -79,7 +79,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
-          <li><a href="<?= base_url('Login/Auth'); ?>">Buat Survey</a></li>
+          <!-- <li><a href="<?= base_url('Login/Auth'); ?>">Buat Survey</a></li> -->
           <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
           <li><a class="nav-link scrollto" href="#team">Tim</a></li>
 
@@ -101,7 +101,7 @@
           <h2 data-aos="fade-up" data-aos-delay="400"> Website Survey Nomor 1 Di Indonesia </h2>
           <div data-aos="fade-up" data-aos-delay="600">
             <div class="text-center text-lg-start">
-              <a class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center" href="<?= base_url('login/auth/registration'); ?>">
+              <a class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center" href="<?= base_url('Login/Auth/registration'); ?>">
                 <span>Daftar</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -559,7 +559,7 @@
 
         <header class="section-header">
           <h2>Tim</h2>
-          <p>Tim Kami</p>
+          <p>Tim Project Kami</p>
         </header>
 
         <div class="row gy-4">
@@ -692,14 +692,14 @@
                 <div class="info-box">
                   <i class="bi bi-telephone"></i>
                   <h3>Hubungi Kami</h3>
-                  <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                  <p>+62 895-6187-24404<br>+62 822-6849-5589</p>
                 </div>
               </div>
               <div class="col-md-2">
                 <div class="info-box">
                   <i class="bi bi-envelope"></i>
                   <h3>Email Kami</h3>
-                  <p>gosurvey@gmail.com<br>infogosurvey@gmail.com</p>
+                  <p>gosurveypcr@gmail.com<br>infogosurvey@gmail.com</p>
                 </div>
               </div>
               <div class="col-md-2">

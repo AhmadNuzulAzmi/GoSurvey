@@ -74,10 +74,20 @@
                                     }
                                     ?>
 
-                                    <td><b>
-                                            <a href="#" data-target="#exampleModal" class="edit4" data-toggle="modal" data-id="<?php echo $value->id; ?> " data-status="<?php echo $value->status; ?> "><label class=" badge badge-info">Edit</label></a>
-                                        </b>
-                                    </td>
+                                    <?php
+                                    if ($value->status == "Unverified") {
+                                    ?>
+                                        <td><b>
+                                                <a href="#" data-target="#exampleModal" class="edit4" data-toggle="modal" data-id="<?php echo $value->id; ?> " data-status="<?php echo $value->status; ?> " data-jml_topup="<?php echo $value->jml_topup; ?> "><label class=" badge badge-info">Edit</label></a>
+                                            </b>
+                                        </td>
+                                    <?php
+                                    } else { ?>
+                                        <td style="color: green;">
+                                            <b> ----- </b>
+                                        </td>
+                                    <?php
+                                    } ?>
                                     <!-- Modal -->
 
                                 </tr>
@@ -107,6 +117,8 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <input type="hidden" class="form-control form-control-lg" id="id" name="id" placeholder="Id">
+                            <input type="hidden" class="form-control form-control-lg" id="jml_topup" name="nominal" placeholder="Id">
+
                         </div>
                         <div class="form-group">
                             <!-- <input type="text" class="form-control form-control-lg" id="status" name="status" placeholder="Status"> -->

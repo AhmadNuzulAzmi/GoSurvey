@@ -66,8 +66,9 @@
 
                 <!-- <button type="button" class="ml-2 btn-sm btn-info border" data-toggle="modal" data-target=".modal-filter">filter audience</button> -->
                 <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" name="filter" class="custom-control-input" id="tidak" value="tidak">
+                  <input type="radio" name="filter" class="custom-control-input" id="tidak" value="tidak" checked>
                   <label class="custom-control-label" for="tidak" style="color: red;">No Filter</label>
+                  <?= form_error('file', '<small class="text-danger pl-3">', '</small>') ?>
                 </div>
 
                 <div class="custom-control custom-radio custom-control-inline">
@@ -320,6 +321,7 @@
               </div>
     </form>
   </div>
+</div>
 </div>
 </div>
 </div>

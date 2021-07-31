@@ -78,9 +78,18 @@
                                     }
                                     ?>
 
-                                    <th>
-                                        <a href="#" data-target="#exampleModal" class="edit5" data-toggle="modal" data-id="<?php echo $value->id; ?> " data-status="<?php echo $value->status; ?> "><label class=" badge badge-info">Edit</label></a>
-                                    </th>
+                                    <?php
+                                    if ($value->status == "Unverified") {
+                                    ?>
+                                        <td>
+                                            <a href="#" data-target="#exampleModal" class="edit5" data-toggle="modal" data-id="<?php echo $value->id; ?> " data-status="<?php echo $value->status; ?> "><label class=" badge badge-info">Edit</label></a>
+                                        </td>
+                                    <?php } else { ?>
+                                        <td style="color: green;">
+                                            <b> ----- </b>
+                                        </td>
+                                    <?php
+                                    } ?>
                                     <!-- Modal -->
 
                                 </tr>

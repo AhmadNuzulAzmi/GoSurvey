@@ -28,7 +28,7 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="<?php echo base_url(); ?>assets/surveyer/assets/images/logo.png" alt="logo" /></a>
+        <a class="navbar-brand brand-logo" href="<?= site_url('/Admin/Admin_ctrl'); ?>"><img src="<?php echo base_url(); ?>assets/surveyer/assets/images/logo.png" alt="logo" /></a>
         <a class="navbar-brand brand-logo-mini" href="index.html"><img src="<?php echo base_url(); ?>assets/surveyer/assets/images/ful.png" alt="logo" /></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-stretch">
@@ -63,7 +63,7 @@
               <a class="dropdown-item" href="<?= base_url('/Member/Password_ctrl'); ?>">
                 <i class="mdi mdi-key-variant mr-2 text-info"></i> Ganti Password </a>
 
-              <a class="dropdown-item" href="<?= base_url('login/auth/logout'); ?>">
+              <a class="dropdown-item" href="<?= base_url('Login/Auth/logout'); ?>">
                 <i class="mdi mdi-logout mr-2 text-info"></i> Logout </a>
             </div>
           </li>

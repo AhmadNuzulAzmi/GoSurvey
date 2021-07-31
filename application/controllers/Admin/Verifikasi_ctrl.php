@@ -156,11 +156,17 @@ class Verifikasi_ctrl extends CI_Controller
         ];
 
         // var_dump($data1);
+        // var_dump($data);
+
+        // $tess = $this->SurveyAdmin_model->edit_riwayatt($data1, $id) == TRUE;
+        // $tes2 = $this->SurveyAdmin_model->edit_veriftopup($data, $id) == TRUE;
+        // var_dump($tess);
+        // var_dump($tes2);
         // die;
 
         if (
             $this->SurveyAdmin_model->edit_veriftopup($data, $id) == TRUE
-            and $this->SurveyAdmin_model->edit_riwayat($data1, $id) == TRUE
+            and $this->SurveyAdmin_model->edit_riwayatt($data1, $id) == TRUE
         ) {
             $this->session->set_flashdata('edit', true);
         } else {
@@ -225,6 +231,10 @@ class Verifikasi_ctrl extends CI_Controller
             'bukti' => $_FILES['image']['name'],
             'status' => $this->input->post('status'),
         ];
+
+        // var_dump($tess);
+        // die;
+
 
         if (
             $this->SurveyAdmin_model->edit_veriftarik($data, $id) == TRUE

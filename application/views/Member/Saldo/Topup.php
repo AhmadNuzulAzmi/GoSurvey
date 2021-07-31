@@ -89,17 +89,18 @@ $jsArra = "var norek = new Array();\n";
                     </form>
                 </div>
             </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        <?php echo $jsArray; ?>
 
-            <script type="text/javascript">
-                <?php echo $jsArray; ?>
+        function changeValue(input_harga) {
+            document.getElementById("hargaaa").value = hargaa[input_harga].hargaaa;
+        }
 
-                function changeValue(input_harga) {
-                    document.getElementById("hargaaa").value = hargaa[input_harga].hargaaa;
-                }
+        <?php echo $jsArra; ?>
 
-                <?php echo $jsArra; ?>
-
-                function changeValuee(input_noreek) {
-                    document.getElementById("rek").value = norek[input_noreek].rek;
-                }
-            </script>
+        function changeValuee(input_noreek) {
+            document.getElementById("rek").value = norek[input_noreek].rek;
+        }
+    </script>

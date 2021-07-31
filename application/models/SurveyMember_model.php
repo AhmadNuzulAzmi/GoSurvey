@@ -43,7 +43,7 @@ class SurveyMember_model extends CI_Model
 
     public function survey_byidtask($id_task)
     {
-        return $this->db->query('select total_nominal from tbl_task  where id_task ="' . $id_task . '" ')->row_array();
+        return $this->db->query('select total_nominal from tbl_task  where id_task ="' . $id_task . '"')->row_array();
     }
 
     public function task_byidtask($id_task)

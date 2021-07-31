@@ -72,6 +72,11 @@ class SurveyAdmin_model extends CI_Model
         return ($this->db->affected_rows() > 0) ? TRUE : FALSE;
     }
 
+    public function edit_riwayatt($data1, $id)
+    {
+        $this->db->update('tbl_riwayat', $data1, array('id' => $id));
+        return ($this->db->affected_rows() > 0) ? TRUE : FALSE;
+    }
     public function edit_riwayattarik($data, $id)
     {
         $this->db->update('tbl_riwayat', $data, array('id' => $id));

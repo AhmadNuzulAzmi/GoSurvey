@@ -75,11 +75,13 @@ $query = "select * from tbl_saldo";
 
                 </div>
             </div>
+        </div>
+    </div>
 
-            <script type="text/javascript">
-                <?php echo $jsArra; ?>
+    <script type="text/javascript">
+        <?php echo $jsArra; ?>
 
-                function changeValuee(input_noreek) {
-                    document.getElementById("rek").value = norek[input_noreek].rek;
-                }
-            </script>
+        function changeValuee(input_noreek) {
+            document.getElementById("rek").value = norek[input_noreek].rek;
+        }
+    </script>

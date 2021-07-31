@@ -74,11 +74,20 @@
                                     }
                                     ?>
 
-                                    <th>
-                                        <a href="#" data-target="#exampleModal" class="edit3" data-toggle="modal" data-id="<?php echo $value->id_task; ?>" data-id_usr="<?php echo $value->id_usr; ?>" data-pembayaran="<?php echo $value->pembayaran; ?>" data-total_nominal="<?php echo $value->total_nominal; ?>" data-status="<?php echo $value->status; ?>">
-                                            <label class=" badge badge-info">Edit</label></a>
-                                    </th>
-                                    <!-- Modal -->
+                                    <?php
+                                    if ($value->status == "unverified") {
+                                    ?>
+                                        <th>
+                                            <a href="#" data-target="#exampleModal" class="edit3" data-toggle="modal" data-id="<?php echo $value->id_task; ?>" data-id_usr="<?php echo $value->id_usr; ?>" data-pembayaran="<?php echo $value->pembayaran; ?>" data-total_nominal="<?php echo $value->total_nominal; ?>" data-status="<?php echo $value->status; ?>">
+                                                <label class=" badge badge-info">Edit</label></a>
+                                        </th>
+                                    <?php
+                                    } else { ?>
+                                        <td style="color: green;">
+                                            <b> ----- </b>
+                                        </td>
+                                    <?php
+                                    } ?>
 
                                 </tr>
                             <?php } ?>

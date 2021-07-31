@@ -35,7 +35,7 @@
                 <img src="<?php echo base_url(); ?>assets/admin/assets/images/logo.png">
               </div>
               <h4>Form Registrasi</h4><br />
-              <form class="user" method="POST" action="<?= base_url('login/auth/registration'); ?>">
+              <form class="user" method="POST" action="<?= base_url('Login/Auth/registration'); ?>">
                 <div class="form-group">
                   <input type="text" class="form-control form-control-lg" name="name" placeholder="Nama" value="<?= set_value('name'); ?>">
                   <?= form_error('name', '<small class="text-danger pl-3">', '</small>') ?>

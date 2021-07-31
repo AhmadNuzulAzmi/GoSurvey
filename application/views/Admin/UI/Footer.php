@@ -140,13 +140,13 @@
   $(".edit4").on("click", function() {
     const idtopup = $(this).data('id');
     const status = $(this).data('status');
-    // const nama = $(this).data('nama');
+    const jml_topup = $(this).data('jml_topup');
     // const nomor = $(this).data('nomor');
     // const pemilik = $(this).data('pemilik');
 
     $("#id").attr("value", idtopup);
     $("#status").attr("value", status);
-    // $("#nama_bank").attr("value", nama);
+    $("#jml_topup").attr("value", jml_topup);
     // $("#nomor_bank").attr("value", nomor);
     // $("#Ats_nama").attr("value", pemilik);
   })

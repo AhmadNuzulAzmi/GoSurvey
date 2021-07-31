@@ -247,7 +247,7 @@
                 <p>Jadilah pengguna (respondend) dan hasilkan penghasilan dari mengisi survey</p>
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-check2"></i>
-                  <h4>Mendaftarkan diri sebagai user</h4>
+                  <h4>Mendaftarkan diri sebagai member</h4>
                 </div>
 
                 <div class="d-flex align-items-center mb-2">
@@ -297,7 +297,7 @@
                 <div class="col-md-6 icon-box" data-aos="fade-up">
                   <i class="ri-line-chart-line"></i>
                   <div>
-                    <h4>Mendaftarkan diri sebagai user</h4>
+                    <h4>Mendaftarkan diri sebagai member</h4>
 
                   </div>
                 </div>

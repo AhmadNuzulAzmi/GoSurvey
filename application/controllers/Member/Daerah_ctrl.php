@@ -18,10 +18,14 @@ class Daerah_ctrl extends CI_Controller
     {
         $data['hasil'] = $this->Daerah_model->Provinsi();
 
-        $data['user'] = $this->db->get_where('tbl_user', ['email_usr' =>
-        $this->session->userdata('email')])->row_array();
+        $dataa = array(
+            'title'  => 'GoSurvey/Isi Profil - Member',
+            'user' => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
+        );
 
-        $this->load->view('Member/UI/Header', $data);
+        // $data['user'] = $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array();
+
+        $this->load->view('Member/UI/Header', $dataa);
         $this->load->view('Member/Profil/Isi_profil', $data);
         $this->load->view('Member/UI/Footer');
     }

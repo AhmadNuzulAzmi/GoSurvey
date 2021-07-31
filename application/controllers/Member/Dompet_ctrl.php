@@ -38,38 +38,32 @@ class Dompet_ctrl extends CI_Controller
     public function topup()
     {
 
-        $data = array(
+        $dataa = array(
             'title'  => 'GoSurvey/Topup - Member',
             'user'   => $this->db->get_where('tbl_user', ['email_usr' => $this->session->userdata('email')])->row_array()
         );
 
-        $data['dompet'] = $this->Dompet_model->saldo($data['user']['id_usr']);
+        $data['dompet'] = $this->Dompet_model->saldo($dataa['user']['id_usr']);
 
-        $this->load->view('Member/UI/Header', $data);
+        $this->load->view('Member/UI/Header', $dataa);
         $this->load->view('Member/Saldo/Topup', $data);
         $this->load->view('Member/UI/Footer');
     }
 
     public function isi_topup()
     {
-        $topup = $this->Dompet_model->select_topup();
-        $this->session->set_flashdata('flash', 'di topup');
         $data['user'] = $this->db->get_where('tbl_user', ['email_usr' =>
         $this->session->userdata('email')])->row_array();
 
         $config['upload_path']          = './assets/gambar/dompet';
-        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
+        $config['allowed_types']        = 'jpg|png|jpeg';
         $config['overwrite']            = true;
-        $config['file_name']             = 'topup_' . $topup[0]->id + 1;
-        $config['max_size']             = 1024;
-        $config['remove_spaces']             = FALSE;
+        $config['max_size']             = 2048;
 
         $this->load->library('upload', $config);
 
         if ($this->upload->do_upload('image')) {
-            $gbr = $this->upload->data();
-        } else {
-            $this->session->set_flashdata('flash', $this->upload->display_errors());;
+            $this->upload->data("file_name");
         }
 
 
@@ -83,10 +77,10 @@ class Dompet_ctrl extends CI_Controller
         $sts = "Unverified";
 
         $data_input = array(
-            'id_usr'    => $topup[0]->id_usr,
+            'id_usr'    => $idusr,
             'tgl_topup' => time(),
             'jml_topup' => $nom,
-            'bukti'     => $gbr['file_name'],
+            'bukti'     => $bkt,
             'transaksi' => $tran,
             'status'    => $sts
         );
@@ -96,12 +90,12 @@ class Dompet_ctrl extends CI_Controller
         $idtask = $this->Dompet_model->isi_topup($data_input);
 
         $data_input1 = array(
-            'id'            => $topup[0]->id_usr,
+            'id'            => $idtask,
             'id_usr'        => $idusr,
             'transaksi'     => $tran,
             'nominal_trans' => $nom,
             'wkt_trans'     => time(),
-            'bukti'         => $gbr['file_name'],
+            'bukti'         => $bkt,
             'status'        => $sts
         );
 
